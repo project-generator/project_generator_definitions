@@ -1,0 +1,9 @@
+name: LPC1768
+vendor: NXP
+core: Cortex M3
+
+toolchain_names:
+	uvision: LPC1768
+	iar: LPC1768
+	coide: LPC1768
+	gcc: cortex-m3
