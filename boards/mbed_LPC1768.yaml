@@ -3,4 +3,4 @@ board:
 	macros:
 		- __MBED__=1
 
-# other board-spefic settings here
+# other board-specific settings here
