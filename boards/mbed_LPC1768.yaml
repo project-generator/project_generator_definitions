@@ -1,3 +1,6 @@
-mcu: LPC1768
-name: mbed LPC1768
+board:
+	mcu: lpc1768
+	macros:
+		- __MBED__=1
 
+# other board-spefic settings here

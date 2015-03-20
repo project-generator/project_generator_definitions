@@ -1,0 +1,10 @@
+core:
+    vendor: ARM
+    name: Cortex M3
+    macros:
+        - TARGET_M3
+        - __CORTEX_M3
+
+toolchain_specific:
+    gcc:
+        cpu: cortex-m3

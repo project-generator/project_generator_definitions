@@ -1,0 +1,10 @@
+core:
+    vendor: ARM
+    name: Cortex M0
+    macros:
+    	- TARGET_M0
+    	- __CORTEX_M0
+
+toolchain_specific:
+    gcc:
+        cpu: cortex-m0
