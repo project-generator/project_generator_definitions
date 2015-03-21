@@ -1,0 +1,5 @@
+target:
+    name:
+        - frdm-k20d50m
+    mcu:
+        - mcu/freescale/mk20dx128xxx5

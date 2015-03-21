@@ -1,0 +1,5 @@
+target:
+    name:
+        - frdm-k64f
+    mcu:
+        - mcu/freescale/mk64fn1m0xxx12
