@@ -5,7 +5,7 @@ mcu:
         - lpc1768
     core:
         - cortex-m3
-tools:
+tool_specific:
     uvision:
         TargetOption:
             Device:
@@ -23,7 +23,7 @@ tools:
     iar:
         OGChipSelectEditMenu:
             state:
-                - LPC1768	NXP LPC1768
+                - LPC1768 NXP LPC1768
         OGCoreOrChip:
             state:
                 - 1

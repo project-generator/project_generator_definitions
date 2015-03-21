@@ -5,7 +5,7 @@ mcu:
         - mk20dx128xxx5
     core:
         - cortex-m4f
-tools:
+tool_specific:
     uvision:
         TargetOption:
             Device:

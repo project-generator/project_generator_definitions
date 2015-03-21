@@ -5,7 +5,7 @@ mcu:
         - mk64fn1m0xxx12
     core:
         - cortex-m4f
-tools:
+tool_specific:
     uvision:
         TargetOption:
             Device:
