@@ -1,0 +1,63 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc1768
+    core:
+        - cortex-m3
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - LPC1768
+            Vendor:
+                - NXP
+            Cpu:
+                - IRAM(0x10000000-0x10007FFF) IRAM2(0x2007C000-0x20083FFF) IROM(0-0x7FFFF) CLOCK(12000000) CPUTYPE("Cortex-M3")
+            FlashDriverDll:
+                - UL2CM3(-O463 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000)
+            DeviceId:
+                - 4868
+            SFDFile:
+                - SFD\NXP\LPC176x5x\LPC176x5x.SFR
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC1768 NXP LPC1768
+        OGCoreOrChip:
+            state:
+                - 1
+    coide:
+        Device:
+            manufacturerId:
+                - 7
+            manufacturerName:
+                - NXP
+            chipId:
+                - 165
+            chipName:
+                - LPC1768
+        DebugOption:
+            defaultAlgorithm:
+                - lpc17xx_512.elf
+        MemoryAreas:
+            IROM1:
+                size:
+                    - 0x00080000
+                startValue:
+                    - 0x00000000
+            IRAM1:
+                size:
+                    - 0x00008000
+                startValue:
+                    - 0x10000000
+            IROM2:
+                size:
+                    - 0x0
+                startValue:
+                    - 0x0
+            IRAM2:
+                size:
+                    - 0x00008000
+                startValue:
+                    - 0x2007C000
