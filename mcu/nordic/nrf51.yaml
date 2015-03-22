@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nordic
+    name:
+        - nrf51
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - nRF51822_xxAA
+            Vendor:
+                - Nordic Semiconductor
+            Cpu:
+                - IROM(0x00000000,0x40000) IRAM(0x20000000,0x4000) CPUTYPE("Cortex-M0") CLOCK(16000000) ELITTLE
+            FlashDriverDll:
+                - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0nrf51xxx -FS00 -FL0200000 -FP0($$Device:nRF51822_xxAA$Flash\nrf51xxx.flm))
+            DeviceId:
+                - 0
+            SFDFile:
+                - $$Device:nRF51822_xxAA$SVD\nrf51.xml
