@@ -14,7 +14,6 @@ target:
         - frdm-k64f
     mcu:
         - mcu/freescale/mk64fn1m0xxx12
-
 ```
 
 ### MCU
@@ -29,7 +28,7 @@ mcu:
         - lpc1768
     core:
         - cortex-m3
-tools:
+tool_specific:
     uvision:
         TargetOption:
             Device:
@@ -45,6 +44,8 @@ tools:
             SFDFile:
                 - SFD\NXP\LPC176x5x\LPC176x5x.SFR
 ```
+
+The data give in the mcu and target use lower cases, also files within this directory to keep consistency. The tool specific data follow the tools definitions.
 
 All this data must be manually written at the moment. We might add a parser for given project file, to generate valid record file for given tool.
 
