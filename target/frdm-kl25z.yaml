@@ -1,0 +1,5 @@
+target:
+    name:
+        - frdm-kl25z
+    mcu:
+        - mcu/freescale/mkl25z128xxx4
