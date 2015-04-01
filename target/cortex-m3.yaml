@@ -2,4 +2,4 @@ target:
     name:
         - cortex-m3
     mcu:
-        - mcu/arm/cortex-m3.yaml
+        - mcu/arm/cortex-m3

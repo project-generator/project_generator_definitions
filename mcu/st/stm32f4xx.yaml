@@ -2,7 +2,7 @@ mcu:
     vendor:
         - st
     name:
-        - stm32f401rc
+        - stm32f4xx
     core:
         - cortex-m4
 tool_specific:
