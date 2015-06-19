@@ -42,22 +42,38 @@ tool_specific:
                 - lpc17xx_512.elf
         MemoryAreas:
             IROM1:
+                name:
+                    - IROM1
                 size:
                     - 0x00080000
                 startValue:
                     - 0x00000000
+                type:
+                    - ReadOnly
             IRAM1:
+                name:
+                    - IRAM1
                 size:
                     - 0x00008000
                 startValue:
                     - 0x10000000
+                type:
+                    - ReadWrite
             IROM2:
+                name:
+                    - IROM2
                 size:
                     - 0x0
                 startValue:
                     - 0x0
+                type:
+                    - ReadOnly
             IRAM2:
+                name:
+                    - IROM2
                 size:
                     - 0x00008000
                 startValue:
                     - 0x2007C000
+                type:
+                    - ReadWrite

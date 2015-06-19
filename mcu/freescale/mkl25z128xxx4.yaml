@@ -35,22 +35,38 @@ tool_specific:
                 - KLxx_128_PRG_NO_CFG.elf
         MemoryAreas:
             IROM1:
+                name:
+                    - IROM1
                 size:
                     - 0x00020000
                 startValue:
                     - 0x00000000
+                type:
+                    - ReadOnly
             IRAM1:
+                name:
+                    - IRAM1
                 size:
                     - 0x00001000
                 startValue:
                     - 0x1FFFF000
+                type:
+                    - ReadWrite
             IROM2:
+                name:
+                    - IROM2
                 size:
                     - 0x0
                 startValue:
                     - 0x0
+                type:
+                    - ReadOnly
             IRAM2:
+                name:
+                    - IRAM2
                 size:
                     - 0x0
                 startValue:
                     - 0x0
+                type:
+                    - ReadWrite
