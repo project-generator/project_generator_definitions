@@ -1,0 +1,5 @@
+target:
+    name:
+        - mkl26z128xxx4
+    mcu:
+        - mcu/freescale/mkl26z128xxx4
