@@ -2,9 +2,9 @@ mcu:
     vendor:
         - freescale
     name:
-        - mk64fn1m0xxx12
+        - mkl25z128xxx4
     core:
-        - cortex-m4f
+        - cortex-m0
 tool_specific:
     uvision:
         TargetOption:

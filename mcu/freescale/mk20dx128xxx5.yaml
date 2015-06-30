@@ -4,7 +4,7 @@ mcu:
     name:
         - mk20dx128xxx5
     core:
-        - cortex-m4f
+        - cortex-m4
 tool_specific:
     uvision:
         TargetOption:
