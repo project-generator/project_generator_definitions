@@ -1,0 +1,5 @@
+target:
+    name:
+        - odin-w2
+    mcu:
+        - mcu/st/stm32f439zitx

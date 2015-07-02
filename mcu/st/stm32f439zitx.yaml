@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f439zitx
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - stm32f439zitx
+            Vendor:
+                - ST
+            Cpu:
+                - IROM(0x08000000,0x200000) IRAM(0x20000000,0x30000) IRAM2(0x10000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            FlashDriverDll:
+                - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_2048 -FS08000000 -FL0200000 -FP0($$Device:STM32F439ZITx$CMSIS\Flash\STM32F4xx_2048.FLM))
+            DeviceId:
+                - 0
+            SFDFile:
+                - SFD\ST\STM32F439ZITx\STM32F439ZITx.SFR
