@@ -20,3 +20,10 @@ tool_specific:
                 - 6206
             SFDFile:
                 - SFD\Freescale\Kinetis\MK20D5.sfr
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MK20DX128xxx5 Freescale MK20DX128xxx5
+        OGCoreOrChip:
+          state:
+          - 1
