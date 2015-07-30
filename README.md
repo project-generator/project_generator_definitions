@@ -1,6 +1,9 @@
 # Project generator definitions
 
 This repository defines definitions for targets and mcus. They are used to set proper data in the tools.
+
+Since pgen v0.7, there's import command, please refer to project generator repository to find out more about how to get the mcu definition file. The idea is to provide a project which has defined MCU. pgen will import required data and creates mcu definition yaml file.
+
 ### Target
 
 To generalize MCU's, there's a target definition available. The target name does not change based on the tool used. There's file board_definitions, where are all boards supported defined. There's a dictionary which translates the target name to the tool's specific MCU name.
@@ -76,6 +79,16 @@ All information in the code above are from uVision project. All attributes needs
 How to get all this information for a new mcu? Create a new project in uVision, select your target, save the project. Then open the project in any text editor, and look for attributes inside TargetOption, as 'Device', 'Vendor', etc.
 
 Once you specified all needed information, test to build your project and check if the correct target is set in the uVision project.
+
+Note:
+You might spot there's RegisterFile for example for nrf51 mcu, which means use new device packs for the mcu.
+
+```
+    uvision:
+        TargetOption:
+            RegisterFile:
+                - $$Device:nRF51822_xxAA$Device\Include\nrf.h
+```
 
 ### IAR
 

@@ -20,3 +20,10 @@ tool_specific:
                 - 7383
             SFDFile:
                 - $$Device:STM32F401RC$SVD\STM32F40x.svd
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F401xE ST STM32F401xE
+        OGCoreOrChip:
+          state:
+          - 1

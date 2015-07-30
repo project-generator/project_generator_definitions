@@ -20,3 +20,5 @@ tool_specific:
                 - 0
             SFDFile:
                 - $$Device:nRF51822_xxAA$SVD\nrf51.xml
+            RegisterFile:
+                - $$Device:nRF51822_xxAA$Device\Include\nrf.h
