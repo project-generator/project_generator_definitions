@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - freescale
+    name:
+        - mkl27z256xxx4
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - MKL27Z256xxx4
+            Vendor:
+                - Freescale Semiconductor
+            Cpu:
+                - IRAM(0x1FFFF000-0x1FFFFFFF) IRAM2(0x20000000-0x20002FFF) IROM(0x0-0x1FFFF) CLOCK(8000000) CPUTYPE("Cortex-M0+") ELITTLE
+            FlashDriverDll:
+                - ULP2CM3(-O2510 -S0 -C0 -FO15 -FD20000000 -FC800 -FN1 -FF0MK_P128_48MHZ -FS00 -FL020000)
+            DeviceId:
+                - 6835
+            SFDFile:
+                - SFD\Freescale\Kinetis\MKL27Z4.sfr
