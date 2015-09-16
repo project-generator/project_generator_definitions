@@ -1,0 +1,5 @@
+target:
+    name:
+        - efm32hg-stk
+    mcu:
+        - mcu/siliconlabs/efm32hg322f64

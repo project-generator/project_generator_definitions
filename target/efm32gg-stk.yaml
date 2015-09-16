@@ -1,0 +1,5 @@
+target:
+    name:
+        - efm32gg-stk
+    mcu:
+        - mcu/siliconlabs/efm32gg990f1024
