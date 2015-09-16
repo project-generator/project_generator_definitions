@@ -1,0 +1,5 @@
+target:
+    name:
+        - mk20dx128xxx5
+    mcu:
+        - mcu/freescale/mk20dx128xxx5

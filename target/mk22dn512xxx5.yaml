@@ -1,0 +1,5 @@
+target:
+    name:
+        - mk22dn512xxx5
+    mcu:
+        - mcu/freescale/mk22dn512xxx5

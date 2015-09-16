@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - arm
+    name:
+        - cortex-m7
+    core:
+        - cortex-m7
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - Cortex-M7
+            Vendor:
+                - ARM
+            Cpu:
+                - IRAM(0x0-0x0) IRAM2(0x0-0x0) IROM(0x0-0x0) CLOCK(12000000) CPUTYPE("Cortex-M7")
+            FlashDriverDll:
+                - 0
+            DeviceId:
+                - 0
+            SFDFile:
+                - 0
