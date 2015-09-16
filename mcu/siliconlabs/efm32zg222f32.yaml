@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - Silicon Labs
+    name:
+        - efm32zg222f32
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - EFM32ZG220F32
+            Vendor:
+                - Energy Micro
+            Cpu:
+                - IRAM(0x20000000-0x20000FFF) IROM(0x00000000-0x00007FFF) CLOCK(32000000) CPUTYPE("Cortex-M0+")
+            FlashDriverDll:
+                - UL2CM3(-O207 -S9 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0EFM32ZG -FS00 -FL08000)
+            DeviceId:
+                - 7461
+            SFDFile:
+                - SFD\EnergyMicro\EFM32ZG\EFM32ZG222F32.SFR
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - EFM32ZG220F32 SiliconLaboratories EFM32ZG220F32
+        OGCoreOrChip:
+          state:
+          - 1

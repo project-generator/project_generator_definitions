@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - Silicon Labs
+    name:
+        - efm32wg990f256
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - EFM32WG990F256
+            Vendor:
+                - Energy Micro
+            Cpu:
+                - IRAM(0x20000000-0x20007fff) IROM(0x00000000-0x3FFFF) CLOCK(48000000) CPUTYPE("Cortex-M4") FPU2
+            FlashDriverDll:
+                - UL2CM3(-O206 -S0 -C0 -FO7 -FD10000000 -FC8000 -FN1 -FF0EFM32WG -FS00 -FL080000)
+            DeviceId:
+                - 6938
+            SFDFile:
+                - SFD\EnergyMicro\EFM32WG\EFM32WG990F256.sfr
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - EFM32WG990F256 SiliconLaboratories EFM32WG990F256
+        OGCoreOrChip:
+          state:
+          - 1
