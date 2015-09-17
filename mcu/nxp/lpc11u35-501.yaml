@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc11u35-501
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - LPC11U35/501
+            Vendor:
+                - NXP
+            Cpu:
+                - IRAM(0x10000000-0x10001FFF) IRAM2(0x20004000-0x200047FF) IROM(0-0xFFFF) CLOCK(12000000) CPUTYPE("Cortex-M0")
+            FlashDriverDll:
+                - UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_64 -FS00 -FL010000)
+            DeviceId:
+                - 6506
+            SFDFile:
+                - SFD\NXP\LPC11Uxx\LPC11Uxx.SFR
