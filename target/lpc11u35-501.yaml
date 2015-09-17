@@ -1,0 +1,5 @@
+target:
+    name:
+        - lpc11u35-501
+    mcu:
+        - mcu/nxp/lpc11u35-501
