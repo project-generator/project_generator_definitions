@@ -34,6 +34,12 @@ class ProGenMCU:
     def get_mcu_definition(self):
         return self.MCU_TEMPLATE
 
+    def _load_record(self, file):
+        project_file = open(file)
+        config = yaml.load(project_file)
+        project_file.close()
+        return config
+
     def get_mcu_record(self, target):
         target_path = join(self.TEMPLATE_DIR_TARGET, target + '.yaml')
         target_record = self._load_record(target_path)
@@ -56,12 +62,6 @@ class ProGenDef(ProGenMCU, ProGenTarget):
 
     def __init__(self):
         ProGenTarget.__init__(self)
-
-    def _load_record(self, file):
-        project_file = open(file)
-        config = yaml.load(project_file)
-        project_file.close()
-        return config
 
     def get_mcu_core(self, target):
         if target not in self.targets:
