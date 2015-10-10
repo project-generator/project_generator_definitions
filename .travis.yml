@@ -1,0 +1,12 @@
+language: python
+python:
+    - "2.7"
+    - "3.3"
+    - "3.4"
+    - "pypy"
+install:
+    - pip install .
+    - pip install -r tests/requirements.txt
+script: nosetests -v --with-coverage --cover-package=project_generator_definitions
+after_success: coveralls
+sudo: false
