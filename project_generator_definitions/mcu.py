@@ -16,10 +16,10 @@ import yaml
 import subprocess
 import logging
 
-from os.path import join, normpath, splitext, isfile, exists, dirname
-from os import listdir, makedirs, getcwd
+from os.path import join, normpath, splitext, isfile, dirname
+from os import listdir
 
-class ProGenTarget:
+class ProGenMCU:
 
     MCU_TEMPLATE = {
         'mcu' : {
@@ -30,21 +30,7 @@ class ProGenTarget:
     }
 
     TEMPLATE_DIR_MCU = join(dirname(__file__), 'mcu')
-    TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
 
-    def __init__(self):
-        self.targets = [splitext(f)[0] for f in listdir(self.TEMPLATE_DIR_TARGET) if isfile(join(self.TEMPLATE_DIR_TARGET,f))]
-
-    def _load_record(self, file):
-        project_file = open(file)
-        config = yaml.load(project_file)
-        project_file.close()
-        return config
-
-    def get_targets(self):
-        return self.targets
-
-    # TODO: rename
     def get_mcu_definition(self):
         return self.MCU_TEMPLATE
 
@@ -55,6 +41,27 @@ class ProGenTarget:
         mcu_path = normpath(mcu_path[0])
         mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
         return self._load_record(mcu_path)
+
+class ProGenTarget:
+
+    TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
+
+    def __init__(self):
+        self.targets = [splitext(f)[0] for f in listdir(self.TEMPLATE_DIR_TARGET) if isfile(join(self.TEMPLATE_DIR_TARGET,f))]
+
+    def get_targets(self):
+        return self.targets
+
+class ProGenDef(ProGenMCU, ProGenTarget):
+
+    def __init__(self):
+        ProGenTarget.__init__(self)
+
+    def _load_record(self, file):
+        project_file = open(file)
+        config = yaml.load(project_file)
+        project_file.close()
+        return config
 
     def get_mcu_core(self, target):
         if target not in self.targets:
