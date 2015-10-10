@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='project_generator_definitions',
-    version='0.0.1a',
+    version='0.0.1a0',
     description='Project generator definitions - mcu',
     author='Martin Kojtal',
     author_email='c0170@rocketmail.com',
@@ -35,6 +35,8 @@ setup(
     ],
 
     packages=find_packages(),
-
+    install_requires = [
+        'pyYAML'
+    ],
     include_package_data = True,
 )

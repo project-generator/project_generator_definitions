@@ -17,30 +17,39 @@ from unittest import TestCase
 
 from project_generator_definitions.mcu import ProGenDef
 
-class TestProject(TestCase):
+class TestDefinitions(TestCase):
 
-    """test things related to the Project class"""
+    """test things related to ProjGenDef class"""
 
     def setUp(self):
         self.definitions = ProGenDef()
 
-    def test_target(self):
-        target = self.definitions.get_mcu_record('frdm-k64f')
-        # it's not empty dictionary and has at least mcu and tool specific
+    def test_get_mcu_def(self):
+        mcu_def = self.definitions.get_mcu_definition()
+        # not empty dic return
+        assert bool(mcu_def)
+        assert mcu_def['mcu']['vendor']
+        assert mcu_def['mcu']['name']
+        assert mcu_def['mcu']['core']
+
+    def test_get_targets(self):
+        target = self.definitions.get_targets()
+        # it's not empty list as we got some targets
         assert bool(target)
-        assert bool(target['mcu'])
-        assert bool(target['tool_specific'])
 
-    def test_core(self):
+    def test_get_mcu_core(self):
+        # valid target
         core = self.definitions.get_mcu_core('frdm-k64f')
+        assert core != None
         assert core[0] == 'cortex-m4f'
-
-    def test_tool_def_nonexist(self):
-        tool_def = self.definitions.get_tool_def('frdm-k64f', 'notexists')
-        assert tool_def is None
+        core = self.definitions.get_mcu_core('novalid')
+        assert core == None
 
     def test_tool_def(self):
-        # test k64f for uvision, should not be empty
-        tool_def = self.definitions.get_tool_def('frdm-k64f', 'uvision')
-        assert bool(tool_def)
+        tool_def = self.definitions.get_tool_def('novalid', 'novalid')
+        assert tool_def == None
+
+    def test_is_supported(self):
+        supported = self.definitions.is_supported('novalid', 'novalid')
+        supported == False
 
