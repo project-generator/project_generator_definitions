@@ -33,7 +33,7 @@ class ProGenTarget:
     TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
 
     def __init__(self):
-        self.target = [splitext(f)[0] for f in listdir(self.TEMPLATE_DIR_TARGET) if isfile(join(self.TEMPLATE_DIR_TARGET,f))]
+        self.targets = [splitext(f)[0] for f in listdir(self.TEMPLATE_DIR_TARGET) if isfile(join(self.TEMPLATE_DIR_TARGET,f))]
 
     def _load_record(self, file):
         project_file = open(file)
@@ -41,23 +41,23 @@ class ProGenTarget:
         project_file.close()
         return config
 
-    def get_mcu(self):
-        return self.target
+    def get_targets(self):
+        return self.targets
 
     # TODO: rename
     def get_mcu_definition(self):
         return self.MCU_TEMPLATE
 
     def get_mcu_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET + target + '.yaml')
+        target_path = join(self.TEMPLATE_DIR_TARGET, target + '.yaml')
         target_record = self._load_record(target_path)
         mcu_path = target_record['target']['mcu']
         mcu_path = normpath(mcu_path[0])
-        mcu_path = join(self.definitions_directory, mcu_path) + '.yaml'
+        mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
         return self._load_record(mcu_path)
 
     def get_mcu_core(self, target):
-        if target not in self.target:
+        if target not in self.targets:
             return None
         mcu_record = self.get_mcu_record(target)
         try:
@@ -66,7 +66,7 @@ class ProGenTarget:
             return None
 
     def get_tool_def(self, target, tool):
-        if target not in self.target:
+        if target not in self.targets:
             return None
         mcu_record = self.get_mcu_record(target)
         try:
@@ -75,7 +75,7 @@ class ProGenTarget:
             return None
 
     def is_supported(self, target, tool):
-        if target.lower() not in self.target:
+        if target.lower() not in self.targets:
             return False
         mcu_record = self.get_mcu_record(target)
         # Look at tool specific options which define tools supported for target
