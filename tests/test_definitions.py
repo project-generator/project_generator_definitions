@@ -24,7 +24,15 @@ class TestDefinitions(TestCase):
     def setUp(self):
         self.definitions = ProGenDef()
 
-    def test_get_target(self):
+    def test_get_mcu_def(self):
+        mcu_def = self.definitions.get_mcu_definition()
+        # not empty dic return
+        assert bool(mcu_def)
+        assert mcu_def['mcu']['vendor']
+        assert mcu_def['mcu']['name']
+        assert mcu_def['mcu']['core']
+
+    def test_get_targets(self):
         target = self.definitions.get_targets()
         # it's not empty list as we got some targets
         assert bool(target)
