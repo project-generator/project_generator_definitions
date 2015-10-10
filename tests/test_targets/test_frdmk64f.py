@@ -17,9 +17,9 @@ from unittest import TestCase
 
 from project_generator_definitions.mcu import ProGenDef
 
-class TestProject(TestCase):
+class TestK64Fdefinitions(TestCase):
 
-    """test things related to the Project class"""
+    """test things related to frdm-k64f target"""
 
     def setUp(self):
         self.definitions = ProGenDef()
