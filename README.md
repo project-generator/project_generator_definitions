@@ -54,16 +54,8 @@ All this data must be manually written at the moment. We might add a parser for 
         TargetOption:
             Device:
                 - LPC1768
-            Vendor:
-                - NXP
-            Cpu:
-                - IRAM(0x10000000-0x10007FFF) IRAM2(0x2007C000-0x20083FFF) IROM(0-0x7FFFF) CLOCK(12000000) CPUTYPE("Cortex-M3")
-            FlashDriverDll:
-                - UL2CM3(-O463 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000)
             DeviceId:
                 - 4868
-            SFDFile:
-                - SFD\NXP\LPC176x5x\LPC176x5x.SFR
 ```
 
 All information in the code above are from uVision project. All attributes needs to be filled in , in order to get proper working target in the project file and the correct flash algorithms for the target.
