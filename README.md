@@ -37,16 +37,8 @@ tool_specific:
         TargetOption:
             Device:
                 - LPC1768
-            Vendor:
-                - NXP
-            Cpu:
-                - IRAM(0x10000000-0x10007FFF) IRAM2(0x2007C000-0x20083FFF) IROM(0-0x7FFFF) CLOCK(12000000) CPUTYPE("Cortex-M3")
-            FlashDriverDll:
-                - UL2CM3(-O463 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000)
             DeviceId:
                 - 4868
-            SFDFile:
-                - SFD\NXP\LPC176x5x\LPC176x5x.SFR
 ```
 
 The data give in the mcu and target use lower cases, also files within this directory to keep consistency. The tool specific data follow the tools definitions.
