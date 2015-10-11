@@ -1,8 +1,8 @@
-# Project generator definitions
+# Project generator definitions alpha version
 
 This repository defines definitions for targets and mcus. They are used to set proper data in the tools.
 
-Since pgen v0.7, there's import command, please refer to project generator repository to find out more about how to get the mcu definition file. The idea is to provide a project which has defined MCU. pgen will import required data and creates mcu definition yaml file.
+Currently alpha version, please check dev_v1 on this github repository. Master is still currently used by pgen v0.x.0.
 
 ### Target
 

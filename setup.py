@@ -1,4 +1,4 @@
-# Copyright 2014 0xc0170
+# Copyright 2015 0xc0170
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ from setuptools import setup, find_packages
 setup(
     name='project_generator_definitions',
     version='0.0.1a0',
-    description='Project generator definitions - mcu',
+    description='Project generator definitions for tools',
     author='Martin Kojtal',
     author_email='c0170@rocketmail.com',
-    keywords="c cpp project generator embedded",
-    url="https://github.com/0xc0170/project_generator_definitions",
+    keywords="definitions mcu uvision iar coide",
+    url="https://github.com/project-generator/project_generator_definitions",
     classifiers= [
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
