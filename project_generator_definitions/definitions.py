@@ -32,7 +32,7 @@ class ProGenMCU:
         return config
 
     def get_mcu_record(self, target):
-        target_path = join(self.TEMPLATE_DIR_TARGET, target + '.yaml')
+        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
         target_record = self._load_record(target_path)
         mcu_path = target_record['target']['mcu']
         mcu_path = normpath(mcu_path[0])
@@ -49,17 +49,19 @@ class ProGenTarget:
 
 class ProGenDef(ProGenMCU, ProGenTarget):
 
+    # TODO: add a generic function to get just core
     TOOLS = {
         'uvision': UvisionDefinition,
         'iar':     IARDefinitions,
     }
 
-    def __init__(self, tool):
+    def __init__(self, tool=None):
         ProGenTarget.__init__(self)
         try:
             self.definitions = self.TOOLS[tool]()
         except KeyError:
             logging.debug("Tool %s not supported." % tool)
+            self.definitions = None
         self.tool = tool
 
     def get_mcu_core(self, target):
