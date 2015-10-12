@@ -15,7 +15,7 @@ import os
 
 from unittest import TestCase
 
-from project_generator_definitions.mcu import ProGenDef
+from project_generator_definitions.definitions import ProGenDef
 
 class TestDefinitions(TestCase):
 
