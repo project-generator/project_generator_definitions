@@ -41,7 +41,8 @@ setup(
     },
     packages=find_packages(),
     install_requires = [
-        'pyYAML'
+        'pyYAML',
+        'xmltodict'
     ],
     include_package_data = True,
 )
