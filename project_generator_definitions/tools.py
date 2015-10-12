@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import xmltodict
+import logging
 
 from os import getcwd
 from os.path import join
@@ -29,22 +30,25 @@ class UvisionDefinition:
 
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
-        # check validity of template otherwise we fail with keyerror, same for IAR
         project_file = join(getcwd(), project_file)
         uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
         # Generic Target, should get from Target class !
         mcu = MCU_TEMPLATE
 
-        mcu['tool_specific'] = {
-            # legacy device
-            'uvision' : {
-                'TargetOption' : {
-                    'Device' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Device']],
-                    'DeviceId' : [int(uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['DeviceId'])],
-
+        try:
+            mcu['tool_specific'] = {
+                # legacy device
+                'uvision' : {
+                    'TargetOption' : {
+                        'Device' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Device']],
+                        'DeviceId' : [int(uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['DeviceId'])],
+                    }
                 }
             }
-        }
+        except KeyError:
+            # validity check for uvision project
+            logging.debug("The project_file %s seems to be not valid .uvproj file.")
+            return mcu
 
         if 'RegisterFile' in uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']:
             mcu['tool_specific']['uvision']['TargetOption']['RegisterFile'] = [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['RegisterFile']]
@@ -52,6 +56,11 @@ class UvisionDefinition:
         return mcu
 
 class IARDefinitions:
+
+    def _get_option(self, settings, find_key):
+        for option in settings:
+            if option['name'] == find_key:
+                return settings.index(option)
 
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
@@ -62,7 +71,14 @@ class IARDefinitions:
 
         mcu = MCU_TEMPLATE
 
-        # we take 0 configuration or just configuration, as multiple configuration possibl
+        try:
+            ewp_dic['project']['configuration']
+        except KeyError:
+            # validity check for iar project
+            logging.debug("The project_file %s seems to be not valid .ewp file.")
+            return mcu
+
+        # we take 0 configuration or just configuration, as multiple configuration possible
         # debug, release, for mcu - does not matter, try and adjust
         try:
             index_general = self._get_option(ewp_dic['project']['configuration'][0]['settings'], 'General')
