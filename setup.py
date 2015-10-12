@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='project_generator_definitions',
-    version='0.0.1a0',
+    version='0.1.0',
     description='Project generator definitions for tools',
     author='Martin Kojtal',
     author_email='c0170@rocketmail.com',
@@ -34,9 +34,15 @@ setup(
         "Topic :: Software Development"
     ],
 
+    entry_points={
+        'console_scripts': [
+            "progendef=project_generator_definitions.main:main",
+        ]
+    },
     packages=find_packages(),
     install_requires = [
-        'pyYAML'
+        'pyYAML',
+        'xmltodict'
     ],
     include_package_data = True,
 )
