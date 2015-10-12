@@ -34,6 +34,11 @@ setup(
         "Topic :: Software Development"
     ],
 
+    entry_points={
+        'console_scripts': [
+            "progendef=project_generator_definitions.main:main",
+        ]
+    },
     packages=find_packages(),
     install_requires = [
         'pyYAML'

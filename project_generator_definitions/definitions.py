@@ -17,22 +17,13 @@ import subprocess
 import logging
 
 from os.path import join, normpath, splitext, isfile, dirname
-from os import listdir
+from os import listdir, getcwd
+
+from .tools import UvisionDefinition, IARDefinitions
+
+TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
 
 class ProGenMCU:
-
-    MCU_TEMPLATE = {
-        'mcu' : {
-            'vendor' : ['Manually add vendor (st, freescale, etc) instead of this text'],
-            'name' : [''],
-            'core' : ['Manually add core (cortex-mX) instead of this text'],
-        },
-    }
-
-    TEMPLATE_DIR_MCU = join(dirname(__file__), 'mcu')
-
-    def get_mcu_definition(self):
-        return self.MCU_TEMPLATE
 
     def _load_record(self, file):
         project_file = open(file)
@@ -50,18 +41,26 @@ class ProGenMCU:
 
 class ProGenTarget:
 
-    TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
-
     def __init__(self):
-        self.targets = [splitext(f)[0] for f in listdir(self.TEMPLATE_DIR_TARGET) if isfile(join(self.TEMPLATE_DIR_TARGET,f))]
+        self.targets = [splitext(f)[0] for f in listdir(TEMPLATE_DIR_TARGET) if isfile(join(TEMPLATE_DIR_TARGET,f))]
 
     def get_targets(self):
         return self.targets
 
 class ProGenDef(ProGenMCU, ProGenTarget):
 
-    def __init__(self):
+    TOOLS = {
+        'uvision': UvisionDefinition,
+        'iar':     IARDefinitions,
+    }
+
+    def __init__(self, tool):
         ProGenTarget.__init__(self)
+        try:
+            self.definitions = self.TOOLS[tool]()
+        except KeyError:
+            logging.debug("Tool %s not supported." % tool)
+        self.tool = tool
 
     def get_mcu_core(self, target):
         if target not in self.targets:
@@ -72,16 +71,16 @@ class ProGenDef(ProGenMCU, ProGenTarget):
         except KeyError:
             return None
 
-    def get_tool_def(self, target, tool):
+    def get_tool_def(self, target):
         if target not in self.targets:
             return None
         mcu_record = self.get_mcu_record(target)
         try:
-            return mcu_record['tool_specific'][tool]
+            return mcu_record['tool_specific'][self.tool]
         except KeyError:
             return None
 
-    def is_supported(self, target, tool):
+    def is_supported(self, target):
         if target.lower() not in self.targets:
             return False
         mcu_record = self.get_mcu_record(target)
@@ -89,8 +88,18 @@ class ProGenDef(ProGenMCU, ProGenTarget):
         # TODO: we might create a list of what tool requires
         try:
             for k,v in mcu_record['tool_specific'].items():
-                if k == tool:
+                if k == self.tool:
                     return True
         except KeyError:
             pass
         return False
+
+    def mcu_create(self, mcu_name, template_file):
+        data = self.definitions.get_mcu_definition(template_file)
+        data['mcu']['name'] = [mcu_name]
+        # we got target, now damp it to root using target.yaml file
+        # we can make it better, and ask for definitions repo clone, and add it
+        # there, at least to MCU folder
+        with open(join(getcwd(), mcu_name + '.yaml'), 'wt') as f:
+            f.write(yaml.safe_dump(data, default_flow_style=False, width=200))
+        return 0
