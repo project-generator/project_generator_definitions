@@ -23,23 +23,13 @@ from .tools import UvisionDefinition, IARDefinitions
 
 TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
 
-class ProGenMCU:
+def _load_record(file):
+    project_file = open(file)
+    config = yaml.load(project_file)
+    project_file.close()
+    return config
 
-    def _load_record(self, file):
-        project_file = open(file)
-        config = yaml.load(project_file)
-        project_file.close()
-        return config
-
-    def get_mcu_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
-        target_record = self._load_record(target_path)
-        mcu_path = target_record['target']['mcu']
-        mcu_path = normpath(mcu_path[0])
-        mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
-        return self._load_record(mcu_path)
-
-class ProGenTarget:
+class ProGenTargets:
 
     def __init__(self):
         self.targets = [splitext(f)[0] for f in listdir(TEMPLATE_DIR_TARGET) if isfile(join(TEMPLATE_DIR_TARGET,f))]
@@ -47,7 +37,20 @@ class ProGenTarget:
     def get_targets(self):
         return self.targets
 
-class ProGenDef(ProGenMCU, ProGenTarget):
+    def get_target_record(self, target):
+        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
+        return _load_record(target_path)
+
+    def get_mcu_record(self, target):
+        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
+        target_record = _load_record(target_path)
+        mcu_path = target_record['target']['mcu']
+        mcu_path = normpath(mcu_path[0])
+        mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
+        return _load_record(mcu_path)
+
+
+class ProGenDef(ProGenTargets):
 
     # TODO: add a generic function to get just core
     TOOLS = {
@@ -56,7 +59,7 @@ class ProGenDef(ProGenMCU, ProGenTarget):
     }
 
     def __init__(self, tool=None):
-        ProGenTarget.__init__(self)
+        ProGenTargets.__init__(self)
         try:
             self.definitions = self.TOOLS[tool]()
         except KeyError:
