@@ -19,7 +19,7 @@ import logging
 from os.path import join, normpath, splitext, isfile, dirname
 from os import listdir, getcwd
 
-from .tools import UvisionDefinition, IARDefinitions
+from .tools import UvisionDefinition, IARDefinitions, CoIDEdefinitions
 
 TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
 
@@ -53,19 +53,23 @@ class ProGenTargets:
 class ProGenDef(ProGenTargets):
 
     # TODO: add a generic function to get just core
-    TOOLS = {
+    TOOL_SPECIFIC = {
         'uvision': UvisionDefinition,
         'iar':     IARDefinitions,
+        'coide':   CoIDEdefinitions
     }
 
     def __init__(self, tool=None):
+        """ Tool can be either tool_specific or None=generic"""
         ProGenTargets.__init__(self)
-        try:
-            self.definitions = self.TOOLS[tool]()
-        except KeyError:
-            logging.debug("Tool %s not supported." % tool)
-            self.definitions = None
-        self.tool = tool
+        self.definitions = None
+        self.tool = None
+        if tool != None:
+            try:
+                self.definitions = self.TOOL_SPECIFIC[tool]()
+                self.tool = tool
+            except KeyError:
+                logging.debug("Tool %s is not supported")
 
     def get_mcu_core(self, target):
         if target not in self.targets:
@@ -76,7 +80,7 @@ class ProGenDef(ProGenTargets):
         except KeyError:
             return None
 
-    def get_tool_def(self, target):
+    def get_tool_definition(self, target):
         if target not in self.targets:
             return None
         mcu_record = self.get_mcu_record(target)
@@ -91,15 +95,22 @@ class ProGenDef(ProGenTargets):
         mcu_record = self.get_mcu_record(target)
         # Look at tool specific options which define tools supported for target
         # TODO: we might create a list of what tool requires
-        try:
-            for k,v in mcu_record['tool_specific'].items():
-                if k == self.tool:
-                    return True
-        except KeyError:
-            pass
-        return False
+        if self.tool:
+            # tool_specific requested look for it
+            try:
+                for k,v in mcu_record['tool_specific'].items():
+                    if k == self.tool:
+                        return True
+            except KeyError:
+                pass
+            return False
+        else:
+            # supports generic part (mcu part)
+            return True
 
     def mcu_create(self, mcu_name, template_file):
+        if self.definitions == None:
+            return False
         data = self.definitions.get_mcu_definition(template_file)
         data['mcu']['name'] = [mcu_name]
         # we got target, now damp it to root using target.yaml file
@@ -107,4 +118,4 @@ class ProGenDef(ProGenTargets):
         # there, at least to MCU folder
         with open(join(getcwd(), mcu_name + '.yaml'), 'wt') as f:
             f.write(yaml.safe_dump(data, default_flow_style=False, width=200))
-        return 0
+        return True

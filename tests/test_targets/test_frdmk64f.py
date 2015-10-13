@@ -36,11 +36,11 @@ class TestK64Fdefinitions(TestCase):
         assert core[0] == 'cortex-m4f'
 
     def test_tool_def_nonexist(self):
-        tool_def = ProGenDef('novalid').get_tool_def('frdm-k64f')
+        tool_def = ProGenDef('novalid').get_tool_definition('frdm-k64f')
         assert tool_def is None
 
     def test_tool_def(self):
         # test k64f for uvision, should not be empty
-        tool_def = ProGenDef('uvision').get_tool_def('frdm-k64f')
+        tool_def = ProGenDef('uvision').get_tool_definition('frdm-k64f')
         assert bool(tool_def)
 
