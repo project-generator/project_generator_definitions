@@ -59,7 +59,7 @@ class ProGenDef(ProGenTargets):
     }
 
     def __init__(self, tool=None):
-        ProGenTarget.__init__(self)
+        ProGenTargets.__init__(self)
         try:
             self.definitions = self.TOOLS[tool]()
         except KeyError:

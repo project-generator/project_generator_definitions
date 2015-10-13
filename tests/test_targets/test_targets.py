@@ -35,6 +35,6 @@ class TestAllTargets(TestCase):
         # Check for required info in mcu
         for target in self.targets_list:
             mcu = self.progen_target.get_mcu_record(target)
-            assert mcu['mcu'][0]
+            assert mcu['mcu']
             assert mcu['mcu']['name'][0]
             assert mcu['mcu']['core'][0]
