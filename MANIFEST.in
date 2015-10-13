@@ -1,1 +1,1 @@
-include project_generator/definitions/mcu/* project_generator/definitions/target/* LICENSE README.md
+include project_generator_definitions/mcu/* project_generator_definitions/target/* LICENSE README.md
