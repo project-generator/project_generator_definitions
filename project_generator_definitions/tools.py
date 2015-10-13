@@ -101,7 +101,7 @@ class IARDefinitions:
         }
         return mcu
 
-class Coide:
+class CoIDEdefinitions:
 
     def _coproj_find_option(self, option_dic, key_to_find, value_to_match):
         i = 0

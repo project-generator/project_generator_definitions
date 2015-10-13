@@ -46,7 +46,7 @@ class TestDefinitions(TestCase):
         assert core == None
 
     def test_tool_def(self):
-        tool_def = self.definitions.get_tool_def('novalid')
+        tool_def = self.definitions.get_tool_definition('novalid')
         assert tool_def == None
 
     def test_is_supported(self):
