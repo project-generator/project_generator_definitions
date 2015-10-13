@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import os
 
 from unittest import TestCase
 
@@ -26,14 +25,16 @@ class TestAllTargets(TestCase):
         self.targets_list = self.progen_target.get_targets()
 
     def test_targets_validity(self):
+        # Cehck for required info for targets
         for target in self.targets_list:
             record = self.progen_target.get_target_record(target)
             assert record['target']['name'][0]
             assert record['target']['mcu'][0]
 
     def test_targets_mcu_validity(self):
+        # Check for required info in mcu
         for target in self.targets_list:
             mcu = self.progen_target.get_mcu_record(target)
-            assert mcu['mcu']
-            assert mcu['mcu']['name']
-            assert mcu['mcu']['core']
+            assert mcu['mcu'][0]
+            assert mcu['mcu']['name'][0]
+            assert mcu['mcu']['core'][0]
