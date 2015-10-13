@@ -100,6 +100,8 @@ class ProGenDef(ProGenTargets):
         return False
 
     def mcu_create(self, mcu_name, template_file):
+        if self.definitions == None:
+            return False
         data = self.definitions.get_mcu_definition(template_file)
         data['mcu']['name'] = [mcu_name]
         # we got target, now damp it to root using target.yaml file
@@ -107,4 +109,4 @@ class ProGenDef(ProGenTargets):
         # there, at least to MCU folder
         with open(join(getcwd(), mcu_name + '.yaml'), 'wt') as f:
             f.write(yaml.safe_dump(data, default_flow_style=False, width=200))
-        return 0
+        return True
