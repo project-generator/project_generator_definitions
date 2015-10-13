@@ -1,1 +1,4 @@
-include project_generator_definitions/mcu/* project_generator_definitions/target/* LICENSE README.md
+recursive-include project_generator_definitions/mcu/* *.yaml
+include project_generator_definitions/target/*
+LICENSE
+README.md
