@@ -8,7 +8,7 @@ mcu:
 tool_specific:
     uvision:
         TargetOption:
-          Device:
+            Device:
                 - MK22DN512xxx5
             DeviceId:
                 - 6600
