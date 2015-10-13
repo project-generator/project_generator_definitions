@@ -61,3 +61,14 @@ class TestAllTargets(TestCase):
                     if tool == 'iar' :
                         assert mcu['tool_specific']['iar']['OGChipSelectEditMenu']['state'][0]
                         assert mcu['tool_specific']['iar']['OGCoreOrChip']['state'][0]
+
+    def test_targets_mcu_tool_specific_coide_validity(self):
+        for target in self.targets_list:
+            mcu = self.progen_target.get_mcu_record(target)
+            if mcu['tool_specific']:
+                for tool in mcu['tool_specific'].keys():
+                    if tool == 'coide' :
+                        assert mcu['tool_specific']['coide']['Device']['manufacturerName'][0]
+                        assert mcu['tool_specific']['coide']['Device']['chipId'][0]
+                        assert mcu['tool_specific']['coide']['Device']['chipName'][0]
+                        assert mcu['tool_specific']['coide']['DebugOption']['defaultAlgorithm'][0]
