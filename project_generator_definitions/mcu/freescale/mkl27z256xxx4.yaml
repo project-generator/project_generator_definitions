@@ -9,5 +9,6 @@ tool_specific:
     uvision:
         TargetOption:
             Device:
-                - MKL27Z256xxx4            DeviceId:
+                - MKL27Z256xxx4
+            DeviceId:
                 - 6835

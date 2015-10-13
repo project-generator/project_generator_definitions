@@ -9,5 +9,6 @@ tool_specific:
     uvision:
         TargetOption:
             Device:
-                - MK64FN1M0xxx12            DeviceId:
+                - MK64FN1M0xxx12
+            DeviceId:
                 - 7425
