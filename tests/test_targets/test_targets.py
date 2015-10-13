@@ -38,3 +38,37 @@ class TestAllTargets(TestCase):
             assert mcu['mcu']
             assert mcu['mcu']['name'][0]
             assert mcu['mcu']['core'][0]
+
+    def test_targets_mcu_tool_specific_uvision_validity(self):
+        for target in self.targets_list:
+            mcu = self.progen_target.get_mcu_record(target)
+            if mcu['tool_specific']:
+                try:
+                    for tool in mcu['tool_specific'].keys():
+                        if tool == 'uvision':
+                            assert mcu['tool_specific']['uvision']['TargetOption']
+                            assert mcu['tool_specific']['uvision']['TargetOption']['Device'][0]
+                            # DeviceId might be 0
+                            assert mcu['tool_specific']['uvision']['TargetOption']['DeviceId'][0] != -1
+                except KeyError:
+                    pass
+
+    def test_targets_mcu_tool_specific_iar_validity(self):
+        for target in self.targets_list:
+            mcu = self.progen_target.get_mcu_record(target)
+            if mcu['tool_specific']:
+                for tool in mcu['tool_specific'].keys():
+                    if tool == 'iar' :
+                        assert mcu['tool_specific']['iar']['OGChipSelectEditMenu']['state'][0]
+                        assert mcu['tool_specific']['iar']['OGCoreOrChip']['state'][0]
+
+    def test_targets_mcu_tool_specific_coide_validity(self):
+        for target in self.targets_list:
+            mcu = self.progen_target.get_mcu_record(target)
+            if mcu['tool_specific']:
+                for tool in mcu['tool_specific'].keys():
+                    if tool == 'coide' :
+                        assert mcu['tool_specific']['coide']['Device']['manufacturerName'][0]
+                        assert mcu['tool_specific']['coide']['Device']['chipId'][0]
+                        assert mcu['tool_specific']['coide']['Device']['chipName'][0]
+                        assert mcu['tool_specific']['coide']['DebugOption']['defaultAlgorithm'][0]
