@@ -59,7 +59,7 @@ class ProGenDef(ProGenTargets):
     }
 
     def __init__(self, tool=None):
-        """ Tool can be either tool_specific or None=generic """
+        """ Tool can be either tool_specific or None=only generic available """
         ProGenTargets.__init__(self)
         self.definitions = None
         self.tool = None
@@ -82,6 +82,7 @@ class ProGenDef(ProGenTargets):
     def get_tool_definition(self, target):
         """ Returns tool specific dic or None if it does not exist for defined tool """
         if target not in self.targets:
+            logging.debug("Target not found in definitions")
             return None
         mcu_record = self.get_mcu_record(target)
         try:
@@ -92,6 +93,7 @@ class ProGenDef(ProGenTargets):
     def is_supported(self, target):
         """ Returns True if target is supported by definitions """
         if target.lower() not in self.targets:
+            logging.debug("Target not found in definitions")
             return False
         mcu_record = self.get_mcu_record(target)
         # Look at tool specific options which define tools supported for target
