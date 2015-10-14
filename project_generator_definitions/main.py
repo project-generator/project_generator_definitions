@@ -16,10 +16,10 @@ import argparse
 import logging
 import pkg_resources
 
-from . import import_command
+from . import create_command
 
 subcommands = {
-    'import': import_command,
+    'create': create_command,
 }
 
 def main():

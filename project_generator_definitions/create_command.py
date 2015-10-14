@@ -15,7 +15,7 @@
 import os
 import logging
 
-help = 'Import mcu definition. Provide a valid project file. The definition file is stored in the current dir.'
+help = 'Create mcu definition. Provide a valid project file. The definition file is stored in the current dir.'
 
 from .definitions import ProGenDef
 
