@@ -52,7 +52,6 @@ class ProGenTargets:
 
 class ProGenDef(ProGenTargets):
 
-    # TODO: add a generic function to get just core
     TOOL_SPECIFIC = {
         'uvision': UvisionDefinition,
         'iar':     IARDefinitions,
@@ -60,7 +59,7 @@ class ProGenDef(ProGenTargets):
     }
 
     def __init__(self, tool=None):
-        """ Tool can be either tool_specific or None=generic"""
+        """ Tool can be either tool_specific or None=generic """
         ProGenTargets.__init__(self)
         self.definitions = None
         self.tool = None
@@ -69,7 +68,7 @@ class ProGenDef(ProGenTargets):
                 self.definitions = self.TOOL_SPECIFIC[tool]()
                 self.tool = tool
             except KeyError:
-                logging.debug("Tool %s is not supported")
+                logging.debug("Tool %s is not supported by progen definitions" % tool)
 
     def get_mcu_core(self, target):
         if target not in self.targets:
@@ -81,6 +80,7 @@ class ProGenDef(ProGenTargets):
             return None
 
     def get_tool_definition(self, target):
+        """ Returns tool specific dic or None if it does not exist for defined tool """
         if target not in self.targets:
             return None
         mcu_record = self.get_mcu_record(target)
@@ -90,6 +90,7 @@ class ProGenDef(ProGenTargets):
             return None
 
     def is_supported(self, target):
+        """ Returns True if target is supported by definitions """
         if target.lower() not in self.targets:
             return False
         mcu_record = self.get_mcu_record(target)
@@ -110,6 +111,7 @@ class ProGenDef(ProGenTargets):
 
     def mcu_create(self, mcu_name, template_file):
         if self.definitions == None:
+            logging.debug("No tool definitoned, can't parse the template file")
             return False
         data = self.definitions.get_mcu_definition(template_file)
         data['mcu']['name'] = [mcu_name]

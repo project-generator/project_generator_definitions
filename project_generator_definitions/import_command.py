@@ -20,7 +20,8 @@ help = 'Import mcu definition. Provide a valid project file. The definition file
 from .definitions import ProGenDef
 
 def run(args):
-    return ProGenDef(args.tool).mcu_create(args.mcu, args.file)
+    if ProGenDef(args.tool).mcu_create(args.mcu, args.file) == False:
+        logging.info("Failed to created mcu yaml def")
 
 def setup(subparser):
     subparser.add_argument(
