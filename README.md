@@ -14,6 +14,8 @@ An example for creating mcu.yaml for lpc1768, from a project file lpc1768_blinky
 progendef create -m lpc1768 -t iar -f lpc1768_blinky.ewp
 ```
 
+This creates lpc1768.yaml file in the current directory.
+
 ## YAML records
 
 ### Target
