@@ -15,12 +15,13 @@
 import os
 import logging
 
-help = 'Import mcu definition. Provide a valid project file. The definition file is stored in the current dir.'
+help = 'Create mcu definition. Provide a valid project file. The definition file is stored in the current dir.'
 
 from .definitions import ProGenDef
 
 def run(args):
-    return ProGenDef(args.tool).mcu_create(args.mcu, args.file)
+    if ProGenDef(args.tool).mcu_create(args.mcu, args.file) == False:
+        logging.info("Failed to created mcu yaml def")
 
 def setup(subparser):
     subparser.add_argument(
