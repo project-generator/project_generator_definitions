@@ -68,7 +68,7 @@ class ProGenDef(ProGenTargets):
                 self.definitions = self.TOOL_SPECIFIC[tool]()
                 self.tool = tool
             except KeyError:
-                logging.debug("Tool %s is not supported by progen definitions" % tool)
+                pass
 
     def get_mcu_core(self, target):
         if target not in self.targets:
