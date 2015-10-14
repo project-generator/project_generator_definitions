@@ -4,6 +4,18 @@ This repository defines definitions for targets and mcus. They are used to set p
 
 Currently alpha version, please check dev_v1 on this github repository. Master is still currently used by pgen v0.x.0.
 
+## Create a new mcu yaml definition
+
+This module provides a script to extract the information needed to create a new yaml mcu definiton file.
+
+An example for creating mcu.yaml for lpc1768, from a project file lpc1768_blinky.ewp (iar)
+
+```
+progendef create -m lpc1768 -t iar -f lpc1768_blinky.ewp
+```
+
+## YAML records
+
 ### Target
 
 To generalize MCU's, there's a target definition available. The target name does not change based on the tool used. There's file board_definitions, where are all boards supported defined. There's a dictionary which translates the target name to the tool's specific MCU name.
