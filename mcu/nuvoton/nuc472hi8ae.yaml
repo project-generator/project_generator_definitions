@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nuvoton
+    name:
+        - nuc472hi8ae
+    core:
+        - cortex-m4f
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - NUC472HI8AE
+            Vendor:
+                - Nuvoton
+            Cpu:
+                - IRAM(0x20000000,0x2000FFFF) IROM(0,0x7FFFF) CLOCK(50000000) CPUTYPE("Cortex-M4") FPU2
+            FlashDriverDll:
+                -
+            DeviceId:
+                - 0
+            SFDFile:
+                - SFD\Nuvoton\NUC400_v1.SFR
