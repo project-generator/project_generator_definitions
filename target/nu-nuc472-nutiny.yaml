@@ -1,0 +1,5 @@
+target:
+    name:
+        - nu-nuc472-nutiny
+    mcu:
+        - mcu/nuvoton/nuc472hi8ae
