@@ -1,0 +1,5 @@
+target:
+    name:
+        - nrf51-dk
+    mcu:
+        - mcu/nordic/nrf51
