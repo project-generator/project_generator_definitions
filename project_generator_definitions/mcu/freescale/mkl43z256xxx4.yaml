@@ -1,0 +1,7 @@
+mcu:
+    vendor:
+        - freescale
+    name:
+        - mkl43z256xxx4
+    core:
+        - cortex-m0

@@ -20,3 +20,10 @@ tool_specific:
                 - 6600
             SFDFile:
                 - $$Device:MK22DN512xxx5$SVD\MK22D5.sfr
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - MK22FN512xxx12 Freescale MK22FN512xxx12
+        OGCoreOrChip:
+            state:
+                - 1

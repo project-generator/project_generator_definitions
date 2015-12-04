@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - freescale
+    name:
+        - mkl46z256xxx4
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MKL46Z256xxx4 Freescale MKL46Z256xxx4
+        OGCoreOrChip:
+          state:
+          - 1
