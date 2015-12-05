@@ -1,0 +1,5 @@
+target:
+    name:
+        - max32600
+    mcu:
+        - mcu/maxim/max32600x85
