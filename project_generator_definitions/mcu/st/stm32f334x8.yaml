@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - STM32F334x8
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F334x8 ST STM32F334x8
+        OGCoreOrChip:
+          state:
+          - 1

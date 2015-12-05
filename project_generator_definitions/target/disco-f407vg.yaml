@@ -2,4 +2,4 @@ target:
     name:
         - disco-f407vg
     mcu:
-        - mcu/st/stm32f4xx
+        - mcu/st/stm32f401xe
