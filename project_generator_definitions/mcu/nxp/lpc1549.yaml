@@ -9,7 +9,7 @@ tool_specific:
     iar:
         OGChipSelectEditMenu:
             state:
-                - LPC1549   NXP LPC1549
+                - LPC1549 NXP LPC1549
         OGCoreOrChip:
             state:
                 - 1
