@@ -22,3 +22,10 @@ tool_specific:
                 - $$Device:nRF51822_xxAA$SVD\nrf51.xml
             RegisterFile:
                 - $$Device:nRF51822_xxAA$Device\Include\nrf.h
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - nRF51822-QFAA NordicSemi nRF51822-QFAA
+        OGCoreOrChip:
+          state:
+          - 1

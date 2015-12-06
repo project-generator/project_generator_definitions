@@ -1,0 +1,5 @@
+target:
+    name:
+        - dfcm-nnn40
+    mcu:
+        - mcu/nordic/nrf51

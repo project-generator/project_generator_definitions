@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - freescale
+    name:
+        - mkl05z32xxx4
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MKL05Z32xxx4 Freescale MKL05Z32xxx4
+        OGCoreOrChip:
+          state:
+          - 1

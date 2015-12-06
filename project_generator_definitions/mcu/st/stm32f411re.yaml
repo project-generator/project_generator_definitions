@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f411re
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F411RE ST STM32F411RE
+        OGCoreOrChip:
+          state:
+          - 1

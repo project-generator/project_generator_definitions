@@ -20,3 +20,10 @@ tool_specific:
                 - 7425
             SFDFile:
                 - $$Device:MK64FN1M0xxx12$SVD\MK64F12.svd
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - MK64FN1M0xxx12 Freescale MK64FN1M0xxx12
+        OGCoreOrChip:
+            state:
+                - 1

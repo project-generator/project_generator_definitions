@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l476vg
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L476VG ST STM32L476VG
+        OGCoreOrChip:
+          state:
+          - 1

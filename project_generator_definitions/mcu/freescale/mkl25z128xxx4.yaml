@@ -20,6 +20,13 @@ tool_specific:
                 - 6533
             SFDFile:
                 - SFD\Freescale\Kinetis\MKL25Z4.sfr
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MKL25Z128xxx4 Freescale MKL25Z128xxx4
+        OGCoreOrChip:
+          state:
+          - 1
     coide:
         Device:
             manufacturerId:

@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l073xz
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L073xz ST STM32L073xz
+        OGCoreOrChip:
+          state:
+          - 1

@@ -1,0 +1,5 @@
+target:
+    name:
+        - nucleo-f446re
+    mcu:
+        - mcu/st/stm32f446re

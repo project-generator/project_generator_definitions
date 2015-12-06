@@ -1,5 +1,5 @@
 target:
     name:
-        - disco-f407vg
+        - nucleo-f401re
     mcu:
         - mcu/st/stm32f401xe

@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - maxim
+    name:
+        - max326000x85
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MAX32600x85 Maxim MAX32600x85
+        OGCoreOrChip:
+          state:
+          - 1
