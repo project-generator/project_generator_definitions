@@ -1,0 +1,5 @@
+target:
+    name:
+        - nucleo-f091rc
+    mcu:
+        - mcu/st/stm32f091rc

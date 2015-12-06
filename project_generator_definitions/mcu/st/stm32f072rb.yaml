@@ -2,14 +2,14 @@ mcu:
     vendor:
         - st
     name:
-        - stm32f334x8
+        - stm32f072rb
     core:
-        - cortex-m4
+        - cortex-m0
 tool_specific:
     iar:
         OGChipSelectEditMenu:
           state:
-          - STM32F334x8 ST STM32F334x8
+          - STM32F072RB ST STM32F072RB
         OGCoreOrChip:
           state:
           - 1

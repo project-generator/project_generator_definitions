@@ -1,0 +1,5 @@
+target:
+    name:
+        - nucleo-f103rb
+    mcu:
+        - mcu/st/stm32f103xb

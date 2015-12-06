@@ -1,0 +1,5 @@
+target:
+    name:
+        - nucleo-f411re
+    mcu:
+        - mcu/st/stm32f411re
