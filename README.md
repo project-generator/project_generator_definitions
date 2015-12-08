@@ -16,25 +16,23 @@ This creates lpc1768.yaml file in the current directory.
 
 ## YAML records
 
-### Target
+### Targets
 
-To generalize MCU's, there's a target definition available. The target name does not change based on the tool used. There's file board_definitions, where are all boards supported defined. There's a dictionary which translates the target name to the tool's specific MCU name.
-
-If a project defines frdm-k20d50m as target, the proper mcu settings will be set for a tool.
-
-Each mcu has own tool_specific definitions.
+To generalize MCU's, there're targets definition available. The target name does not change based on the tool used. We provide a dictionary where we can define a target with mcu, for instance:
 
 ```
-target:
-    name:
-        - frdm-k64f
-    mcu:
-        - mcu/freescale/mk64fn1m0xxx12
+PROGENDEF_TARGETS = {
+    'arch-ble': 'mcu/nordic/nrf51',
+}
 ```
+
+If a project can either use arch-ble as a target or nrf51 (mcu). 
 
 ### MCU
 
 MCU record defines the basic information about the mcu and specific settings for each tool. As an example is shown the uvision settings for the lpc1768 mcu. These specific data can be manually extracted from a project file or use progendef commad to create the yaml file for you.
+
+If you are adding a new mcu, please follow the uvision naming for MCUs, for consistency.
 
 ```
 mcu:
