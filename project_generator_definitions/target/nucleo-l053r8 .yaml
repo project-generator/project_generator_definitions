@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-l053r8
-    mcu:
-        - mcu/st/stm32l053x8

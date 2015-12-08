@@ -1,5 +1,0 @@
-target:
-    name:
-        - disco-l476vg
-    mcu:
-        - mcu/st/stm32l476vg

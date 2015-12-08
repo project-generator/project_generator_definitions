@@ -1,5 +1,0 @@
-target:
-    name:
-        - hrm1017
-    mcu:
-        - mcu/nordic/nrf51

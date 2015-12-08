@@ -14,34 +14,27 @@
 
 from unittest import TestCase
 
-from project_generator_definitions.definitions import ProGenTargets
-from project_generator_definitions.target.targets import PROGENDEF_TARGETS
+from project_generator_definitions.definitions import ProGenMcus
 
-class TestAllTargets(TestCase):
+class TestAllMcus(TestCase):
 
     """test all targets"""
 
     def setUp(self):
-        self.progen_target = ProGenTargets()
-        self.targets_list = self.progen_target.get_targets()
+        self.progen_mcus = ProGenMcus()
+        self.mcus_list = self.progen_mcus.get_mcus()
 
-    def test_targets_validity(self):
-        # Cehck for required info for targets
-        for target in self.targets_list:
-            mcu_path = PROGENDEF_TARGETS[target]
-            assert mcu_path
-
-    def test_targets_mcu_validity(self):
+    def test_mcu_validity(self):
         # Check for required info in mcu
-        for target in self.targets_list:
-            mcu = self.progen_target.get_mcu_record(target)
-            assert mcu['mcu']
-            assert mcu['mcu']['name'][0]
-            assert mcu['mcu']['core'][0]
+        for mcu in self.mcus_list:
+            mcu_rec = self.progen_mcus.get_mcu_record(mcu)
+            assert mcu_rec['mcu']
+            assert mcu_rec['mcu']['name'][0]
+            assert mcu_rec['mcu']['core'][0]
 
-    def test_targets_mcu_tool_specific_uvision_validity(self):
-        for target in self.targets_list:
-            mcu = self.progen_target.get_mcu_record(target)
+    def test_mcu_tool_specific_uvision_validity(self):
+        for target in self.mcus_list:
+            mcu = self.progen_mcus.get_mcu_record(target)
             if mcu['tool_specific']:
                 try:
                     for tool in mcu['tool_specific'].keys():
@@ -53,18 +46,18 @@ class TestAllTargets(TestCase):
                 except KeyError:
                     pass
 
-    def test_targets_mcu_tool_specific_iar_validity(self):
-        for target in self.targets_list:
-            mcu = self.progen_target.get_mcu_record(target)
+    def test_mcu_tool_specific_iar_validity(self):
+        for mcu in self.mcus_list:
+            mcu = self.progen_mcus.get_mcu_record(mcu)
             if mcu['tool_specific']:
                 for tool in mcu['tool_specific'].keys():
                     if tool == 'iar' :
                         assert mcu['tool_specific']['iar']['OGChipSelectEditMenu']['state'][0]
                         assert mcu['tool_specific']['iar']['OGCoreOrChip']['state'][0]
 
-    def test_targets_mcu_tool_specific_coide_validity(self):
-        for target in self.targets_list:
-            mcu = self.progen_target.get_mcu_record(target)
+    def test_mcu_tool_specific_coide_validity(self):
+        for mcu in self.mcus_list:
+            mcu = self.progen_mcus.get_mcu_record(mcu)
             if mcu['tool_specific']:
                 for tool in mcu['tool_specific'].keys():
                     if tool == 'coide' :

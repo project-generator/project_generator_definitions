@@ -1,5 +1,0 @@
-target:
-    name:
-        - disco-l053c8
-    mcu:
-        - mcu/st/stm32l053x8

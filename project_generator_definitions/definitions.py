@@ -15,13 +15,13 @@
 import yaml
 import subprocess
 import logging
+import glob
 
-from os.path import join, normpath, splitext, isfile, dirname
+from os.path import join, normpath, splitext, isfile, dirname, basename
 from os import listdir, getcwd
 
 from .tools import UvisionDefinition, IARDefinitions, CoIDEdefinitions
-
-TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
+from .target.targets import PROGENDEF_TARGETS
 
 def _load_record(file):
     project_file = open(file)
@@ -29,28 +29,44 @@ def _load_record(file):
     project_file.close()
     return config
 
+class ProGenMcus:
+
+    def __init__(self):
+        mcu_files = glob.glob(join(dirname(__file__), 'mcu', '*', '*.yaml'))
+        self.mcus = {}
+        for m in mcu_files:
+            self.mcus[splitext(basename(m))[0]] = m
+
+    def get_mcus(self):
+        return list(self.mcus.keys())
+
+    def get_mcu_record(self, mcu):
+        if mcu in self.get_mcus():
+            mcu_path = self.mcus[mcu]
+            return _load_record(mcu_path)
+        else:
+            logging.info("Target not found")
+            return None
+
 class ProGenTargets:
 
     def __init__(self):
-        self.targets = [splitext(f)[0] for f in listdir(TEMPLATE_DIR_TARGET) if isfile(join(TEMPLATE_DIR_TARGET,f))]
+        self.targets = PROGENDEF_TARGETS
 
     def get_targets(self):
-        return self.targets
-
-    def get_target_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
-        return _load_record(target_path)
+        return list(self.targets.keys())
 
     def get_mcu_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
-        target_record = _load_record(target_path)
-        mcu_path = target_record['target']['mcu']
-        mcu_path = normpath(mcu_path[0])
-        mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
-        return _load_record(mcu_path)
+        if target in self.get_targets():
+            mcu_path = self.targets[target]
+            mcu_path = normpath(mcu_path)
+            mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
+            return _load_record(mcu_path)
+        else:
+            logging.info("Target not found")
+            return None
 
-
-class ProGenDef(ProGenTargets):
+class ProGenDef:
 
     TOOL_SPECIFIC = {
         'uvision': UvisionDefinition,
@@ -60,7 +76,10 @@ class ProGenDef(ProGenTargets):
 
     def __init__(self, tool=None):
         """ Tool can be either tool_specific or None=only generic available """
-        ProGenTargets.__init__(self)
+        self.targets = ProGenTargets()
+        self.mcus = ProGenMcus()
+        # list of all mcu and targets. User can request any of these, we figure it out
+        self.targets_mcu_list = self.targets.get_targets() + self.mcus.get_mcus()
         self.definitions = None
         self.tool = None
         if tool != None:
@@ -70,10 +89,16 @@ class ProGenDef(ProGenTargets):
             except KeyError:
                 pass
 
+    def get_targets(self):
+        return self.targets.get_targets()
+
+    def get_mcus(self):
+        return self.mcus.get_mcus()
+
     def get_mcu_core(self, target):
-        if target not in self.targets:
+        if target not in self.targets_mcu_list:
             return None
-        mcu_record = self.get_mcu_record(target)
+        mcu_record = self.targets.get_mcu_record(target) if self.mcus.get_mcu_record(target) is None else self.mcus.get_mcu_record(target)
         try:
             return mcu_record['mcu']['core']
         except KeyError:
@@ -81,10 +106,10 @@ class ProGenDef(ProGenTargets):
 
     def get_tool_definition(self, target):
         """ Returns tool specific dic or None if it does not exist for defined tool """
-        if target not in self.targets:
+        if target not in self.targets_mcu_list:
             logging.debug("Target not found in definitions")
             return None
-        mcu_record = self.get_mcu_record(target)
+        mcu_record = self.targets.get_mcu_record(target) if self.mcus.get_mcu_record(target) is None else self.mcus.get_mcu_record(target)
         try:
             return mcu_record['tool_specific'][self.tool]
         except KeyError:
@@ -92,10 +117,10 @@ class ProGenDef(ProGenTargets):
 
     def is_supported(self, target):
         """ Returns True if target is supported by definitions """
-        if target.lower() not in self.targets:
+        if target.lower() not in self.targets_mcu_list:
             logging.debug("Target not found in definitions")
             return False
-        mcu_record = self.get_mcu_record(target)
+        mcu_record = self.targets.get_mcu_record(target) if self.mcus.get_mcu_record(target) is None else self.mcus.get_mcu_record(target)
         # Look at tool specific options which define tools supported for target
         # TODO: we might create a list of what tool requires
         if self.tool:

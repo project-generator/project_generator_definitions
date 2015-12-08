@@ -1,5 +1,0 @@
-target:
-    name:
-        - frdm-k22f
-    mcu:
-        - mcu/freescale/mk22dn512xxx5

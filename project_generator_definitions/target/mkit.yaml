@@ -1,5 +1,0 @@
-target:
-    name:
-        - mkit
-    mcu:
-        - mcu/nordic/nrf51

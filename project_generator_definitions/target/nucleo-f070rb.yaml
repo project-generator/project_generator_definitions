@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f070rb
-    mcu:
-        - mcu/st/stm32f070rb

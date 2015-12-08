@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f303re
-    mcu:
-        - mcu/st/stm32f303xe

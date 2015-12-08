@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f401re
-    mcu:
-        - mcu/st/stm32f401xe
