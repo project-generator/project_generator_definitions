@@ -1,0 +1,5 @@
+target:
+    name:
+        - atsam3u2c
+    mcu:
+        - mcu/atmel/atsam3u2c
