@@ -1,5 +1,0 @@
-target:
-    name:
-        - frdm-kl46z
-    mcu:
-        - mcu/freescale/mkl46z256xxx4

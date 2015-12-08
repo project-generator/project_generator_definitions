@@ -1,5 +1,0 @@
-target:
-    name:
-        - stk3700-gcc
-    mcu:
-        - mcu/siliconlabs/efm32gg990f1024

@@ -1,5 +1,0 @@
-target:
-    name:
-        - arch-ble
-    mcu:
-        - mcu/nordic/nrf51

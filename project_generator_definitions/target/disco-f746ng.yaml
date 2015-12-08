@@ -1,5 +1,0 @@
-target:
-    name:
-        - disco-f334c8
-    mcu:
-        - mcu/st/stm32f746ng

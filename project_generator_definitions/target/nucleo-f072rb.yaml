@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f072rb
-    mcu:
-        - mcu/st/stm32f072rb

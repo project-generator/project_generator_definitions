@@ -1,5 +1,0 @@
-target:
-    name:
-        - cortex-m0
-    mcu:
-        - mcu/arm/cortex-m0

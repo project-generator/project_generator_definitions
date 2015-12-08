@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-l073rz
-    mcu:
-        - mcu/st/stm32l073xz

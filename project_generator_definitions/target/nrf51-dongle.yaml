@@ -1,5 +1,0 @@
-target:
-    name:
-        - nrf51-dongle
-    mcu:
-        - mcu/nordic/nrf51

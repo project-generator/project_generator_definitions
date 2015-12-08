@@ -1,5 +1,0 @@
-target:
-    name:
-        - frdm-kl05z
-    mcu:
-        - mcu/freescale/mkl05z32xxx4

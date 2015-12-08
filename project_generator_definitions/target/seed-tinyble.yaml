@@ -1,5 +1,0 @@
-target:
-    name:
-        - seed-tinyble
-    mcu:
-        - mcu/nordic/nrf51

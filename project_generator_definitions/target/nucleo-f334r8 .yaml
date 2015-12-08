@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f334r8
-    mcu:
-        - mcu/st/stm32f334x8

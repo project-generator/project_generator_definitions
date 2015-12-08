@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-f030r8
-    mcu:
-        - mcu/st/stm32f030x8

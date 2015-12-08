@@ -1,5 +1,0 @@
-target:
-    name:
-        - nucleo-l152re
-    mcu:
-        - mcu/st/stm32l152xe
