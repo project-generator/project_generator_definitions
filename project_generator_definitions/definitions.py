@@ -31,15 +31,15 @@ def _load_record(file):
 class ProGenTargets:
 
     def __init__(self):
-        self.targets = [PROGENDEF_TARGETS.keys()]
+        self.targets = PROGENDEF_TARGETS
 
     def get_targets(self):
-        return self.targets
+        return self.targets.keys()
 
     def get_mcu_record(self, target):
-        if target in PROGENDEF_TARGETS:
-            mcu_path = PROGENDEF_TARGETS[target]
-            mcu_path = normpath(mcu_path[0])
+        if target in self.get_targets():
+            mcu_path = self.targets[target]
+            mcu_path = normpath(mcu_path)
             mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
             return _load_record(mcu_path)
         else:
@@ -67,7 +67,7 @@ class ProGenDef(ProGenTargets):
                 pass
 
     def get_mcu_core(self, target):
-        if target not in self.targets:
+        if target not in self.get_targets():
             return None
         mcu_record = self.get_mcu_record(target)
         try:
@@ -77,7 +77,7 @@ class ProGenDef(ProGenTargets):
 
     def get_tool_definition(self, target):
         """ Returns tool specific dic or None if it does not exist for defined tool """
-        if target not in self.targets:
+        if target not in self.get_targets():
             logging.debug("Target not found in definitions")
             return None
         mcu_record = self.get_mcu_record(target)
@@ -88,7 +88,7 @@ class ProGenDef(ProGenTargets):
 
     def is_supported(self, target):
         """ Returns True if target is supported by definitions """
-        if target.lower() not in self.targets:
+        if target.lower() not in self.get_targets():
             logging.debug("Target not found in definitions")
             return False
         mcu_record = self.get_mcu_record(target)
