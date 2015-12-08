@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Targets mapping to mcu
+# should be target name: path to mcu yaml file
 PROGENDEF_TARGETS = {
     'arch-ble': 'mcu/nordic/nrf51',
     'arch-pro': 'mcu/nordic/nrf51',
