@@ -15,6 +15,7 @@
 from unittest import TestCase
 
 from project_generator_definitions.definitions import ProGenTargets
+from project_generator_definitions.target.targets import PROGENDEF_TARGETS
 
 class TestAllTargets(TestCase):
 
@@ -27,9 +28,8 @@ class TestAllTargets(TestCase):
     def test_targets_validity(self):
         # Cehck for required info for targets
         for target in self.targets_list:
-            record = self.progen_target.get_target_record(target)
-            assert record['target']['name'][0]
-            assert record['target']['mcu'][0]
+            mcu_path = PROGENDEF_TARGETS[target]
+            assert mcu_path
 
     def test_targets_mcu_validity(self):
         # Check for required info in mcu

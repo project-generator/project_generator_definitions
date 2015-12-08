@@ -20,8 +20,7 @@ from os.path import join, normpath, splitext, isfile, dirname
 from os import listdir, getcwd
 
 from .tools import UvisionDefinition, IARDefinitions, CoIDEdefinitions
-
-TEMPLATE_DIR_TARGET = join(dirname(__file__), 'target')
+from .target.targets import PROGENDEF_TARGETS
 
 def _load_record(file):
     project_file = open(file)
@@ -32,23 +31,20 @@ def _load_record(file):
 class ProGenTargets:
 
     def __init__(self):
-        self.targets = [splitext(f)[0] for f in listdir(TEMPLATE_DIR_TARGET) if isfile(join(TEMPLATE_DIR_TARGET,f))]
+        self.targets = [PROGENDEF_TARGETS.keys()]
 
     def get_targets(self):
         return self.targets
 
-    def get_target_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
-        return _load_record(target_path)
-
     def get_mcu_record(self, target):
-        target_path = join(TEMPLATE_DIR_TARGET, target + '.yaml')
-        target_record = _load_record(target_path)
-        mcu_path = target_record['target']['mcu']
-        mcu_path = normpath(mcu_path[0])
-        mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
-        return _load_record(mcu_path)
-
+        if target in PROGENDEF_TARGETS:
+            mcu_path = PROGENDEF_TARGETS[target]
+            mcu_path = normpath(mcu_path[0])
+            mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
+            return _load_record(mcu_path)
+        else:
+            logging.info("Target not found")
+            return None
 
 class ProGenDef(ProGenTargets):
 
