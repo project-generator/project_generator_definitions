@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f401xe
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - STM32F401RC
+            Vendor:
+                - STMicroelectronics
+            Cpu:
+                - IROM(0x08000000,0x40000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(84000000) ELITTLE
+            FlashDriverDll:
+                - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_256 -FS08000000 -FL040000 -FP0($$Device:STM32F401RC$Flash\STM32F4xx_256.FLM))
+            DeviceId:
+                - 7383
+            SFDFile:
+                - $$Device:STM32F401RC$SVD\STM32F40x.svd
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F401xE ST STM32F401xE
+        OGCoreOrChip:
+          state:
+          - 1

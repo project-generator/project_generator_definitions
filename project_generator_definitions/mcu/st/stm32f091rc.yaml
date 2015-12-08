@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f091rc
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F091RC ST STM32F091RC
+        OGCoreOrChip:
+          state:
+          - 1

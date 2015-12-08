@@ -1,5 +1,0 @@
-target:
-    name:
-        - cortex-m4
-    mcu:
-        - mcu/arm/cortex-m4

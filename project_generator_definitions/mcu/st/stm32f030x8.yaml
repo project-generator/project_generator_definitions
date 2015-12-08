@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f030x8
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F030x8 ST STM32F030x8
+        OGCoreOrChip:
+          state:
+          - 1

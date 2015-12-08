@@ -1,5 +1,0 @@
-target:
-    name:
-        - mbed-lpc1768
-    mcu:
-        - mcu/nxp/lpc1768

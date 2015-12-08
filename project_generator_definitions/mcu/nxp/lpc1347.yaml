@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc1347
+    core:
+        - cortex-m3
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC1347 NXP LPC1347
+        OGCoreOrChip:
+            state:
+                - 1

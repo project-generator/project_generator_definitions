@@ -1,5 +1,0 @@
-target:
-    name:
-        - efm32wg-stk
-    mcu:
-        - mcu/siliconlabs/efm32wg990f256

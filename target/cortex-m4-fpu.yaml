@@ -1,5 +1,0 @@
-target:
-    name:
-        - cortex-m4-fpu
-    mcu:
-        - mcu/arm/cortex-m4-fpu

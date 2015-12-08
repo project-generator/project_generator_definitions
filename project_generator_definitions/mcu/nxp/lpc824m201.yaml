@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc824m201
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC824M201 NXP LPC824M201
+        OGCoreOrChip:
+            state:
+                - 1

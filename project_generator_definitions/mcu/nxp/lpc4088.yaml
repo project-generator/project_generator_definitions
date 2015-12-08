@@ -1,0 +1,15 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc4088
+    core:
+        - cortex-m3
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC4088 NXP LPC4088
+        OGCoreOrChip:
+            state:
+                - 1

@@ -1,5 +1,0 @@
-target:
-    name:
-        - efm32zg-stk
-    mcu:
-        - mcu/siliconlabs/efm32zg222f32

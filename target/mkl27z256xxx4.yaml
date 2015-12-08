@@ -1,5 +1,0 @@
-target:
-    name:
-        - mkl27z256xxx4
-    mcu:
-        - mcu/freescale/mkl27z256xxx4
