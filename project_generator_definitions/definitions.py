@@ -129,7 +129,7 @@ class ProGenDef:
                 for k,v in mcu_record['tool_specific'].items():
                     if k == self.tool:
                         return True
-            except KeyError:
+            except TypeError, KeyError:
                 pass
             return False
         else:
