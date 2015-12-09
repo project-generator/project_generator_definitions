@@ -32,6 +32,7 @@ PROGENDEF_TARGETS = {
     'frdm-k20d50m':'mcu/freescale/mk20dx128xxx5',
     'frdm-k22f':'mcu/freescale/mk22dn512xxx5',
     'frdm-k64f': 'mcu/freescale/mk64fn1m0xxx12',
+    'k64f': 'mcu/freescale/mk64fn1m0xxx12',
     'frdm-kl05z':'mcu/freescale/mkl05z32xxx4',
     'frdm-kl25z':'mcu/freescale/mkl25z128xxx4',
     'frdm-kl43z':'mcu/freescale/mkl43z256xxx4',
