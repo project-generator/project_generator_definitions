@@ -40,7 +40,7 @@ PROGENDEF_TARGETS = {
     'hrm1017':'mcu/nordic/nrf51',
     'max32600':'mcu/maxim/max32600x85',
     'max32600':'mcu/maxim/max32600x85',
-    'mbed-lpc11u24':'mcu/nxp/lpc11u24fbd64_401',
+    'mbed-lpc11u24':'mcu/nxp/lpc11u24_201',
     'mbed-lpc1768':'mcu/nxp/lpc1768',
     'mkit':'mcu/nordic/nrf51',
     'nrf51-dk':'mcu/nordic/nrf51',

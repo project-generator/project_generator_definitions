@@ -2,7 +2,7 @@ mcu:
     vendor:
         - nxp
     name:
-        - lpc11u14_201
+        - lpc11u24_201
     core:
         - cortex-m0
 tool_specific:
@@ -16,7 +16,7 @@ tool_specific:
     uvision:
         TargetOption:
             Device:
-                - LPC11U14/201
+                - LPC11U24/201
             Vendor:
                 - NXP
             Cpu:
