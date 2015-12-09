@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc11c24_301
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - LPC11C24/301
+            Vendor:
+                - NXP
+            Cpu:
+                - RAM(0x10000000-0x10001FFF) IROM(0-0x7FFF) CLOCK(12000000) CPUTYPE("Cortex-M0")
+            FlashDriverDll:
+                - UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000)
+            DeviceId:
+                - 5617
+            SFDFile:
+                - SFD\NXP\LPC11xx\LPC11Cxx.sfr

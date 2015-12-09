@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - atmel
+    name:
+        - samd21j18a
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - SAMD21J18A
+            Vendor:
+                - Atmel
+            Cpu:
+                - IRAM(0x20000000-0x20007FFF) IROM(0x00000000-0x0003FFFF) CLOCK(8000000) CPUTYPE("Cortex-M0+")
+            FlashDriverDll:
+                - UL2CM3(-O207 -S9 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0ATSAMD21_256 -FS00 -FL040000)
+            DeviceId:
+                - 7346
+            SFDFile:
+                - SFD\Atmel\SAMD21\ATSAMD21J18A.SFR

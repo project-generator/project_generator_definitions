@@ -2,7 +2,7 @@ mcu:
     vendor:
         - nxp
     name:
-        - lpc11u37fbd64_501
+        - lpc11u37_501
     core:
         - cortex-m0
 tool_specific:
