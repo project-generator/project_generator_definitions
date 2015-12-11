@@ -20,3 +20,10 @@ tool_specific:
                 - 6506
             SFDFile:
                 - SFD\NXP\LPC11Uxx\LPC11Uxx.SFR
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC11U35FET48_501 NXP LPC11U35FET48_501
+        OGCoreOrChip:
+            state:
+                - 1

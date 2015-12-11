@@ -2,28 +2,28 @@ mcu:
     vendor:
         - nxp
     name:
-        - lpc812m101
+        - lpc11u24_201
     core:
         - cortex-m0
 tool_specific:
     iar:
         OGChipSelectEditMenu:
             state:
-                - LPC812M101 NXP LPC812M101
+                - LPC11U24FBD64_401 NXP LPC11U24FBD64_401
         OGCoreOrChip:
             state:
                 - 1
     uvision:
         TargetOption:
             Device:
-                - LPC812M101
+                - LPC11U24/201
             Vendor:
                 - NXP
             Cpu:
-                - IRAM(0x10000000-0x10000FFF) IROM(0-0x3FFF) CLOCK(12000000) CPUTYPE("Cortex-M0+")
+                - IRAM(0x10000000-0x10000FFF) IROM(0-0x7FFF) CLOCK(12000000) CPUTYPE("Cortex-M0")
             FlashDriverDll:
-                - UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC8xx_16 -FS00 -FL04000)
+                - UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_32 -FS00 -FL08000)
             DeviceId:
-                - 6712
+                - 5738
             SFDFile:
-                - SFD\NXP\LPC8xx\LPC800.SFR
+                - SFD\NXP\LPC11Uxx\LPC11Uxx.SFR

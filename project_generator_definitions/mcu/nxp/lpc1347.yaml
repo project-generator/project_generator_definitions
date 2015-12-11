@@ -13,3 +13,17 @@ tool_specific:
         OGCoreOrChip:
             state:
                 - 1
+    uvision:
+        TargetOption:
+            Device:
+                - LPC1347
+            Vendor:
+                - NXP
+            Cpu:
+                - IRAM(0x10000000-0x10001FFF) IRAM2(0x20000000-0x200007FF) IROM(0-0xFFFF) CLOCK(12000000) CPUTYPE("Cortex-M3")
+            FlashDriverDll:
+                - UL2CM3(-O4303 -S0 -C0 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC1xxx_64 -FS00 -FL010000)
+            DeviceId:
+                - 6286
+            SFDFile:
+                - SFD\NXP\LPC13Uxx\LPC13Uxx.sfr

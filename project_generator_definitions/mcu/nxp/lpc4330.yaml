@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc4330
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - LPC4330
+            Vendor:
+                - NXP
+            Cpu:
+                - IRAM(0x10000000-0x1001FFFF) IRAM2(0x20000000-0x2000FFFF) CLOCK(12000000) CPUTYPE("Cortex-M4") FPU2
+            FlashDriverDll:
+                - UL2CM3(-O975 -S0 -C0)
+            DeviceId:
+                - 6193
+            SFDFile:
+                - SFD\NXP\LPC43xx\LPC43xx.SFR

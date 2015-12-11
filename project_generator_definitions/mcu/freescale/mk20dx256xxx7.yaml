@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - freescale
+    name:
+        - mk20dx256xxx7
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - MK20DX256xxx7
+            Vendor:
+                - Freescale Semiconductor
+            Cpu:
+                - IRAM(0x1FFF8000-0x1FFFFFFF) IRAM2(0x20000000-0x20007FFF) IROM(0x0-0x3FFFF) IROM2(0x10000000-0x10007FFF) CLOCK(12000000) CPUTYPE("Cortex-M4") ELITTLE
+            FlashDriverDll:
+                - ULP2CM3(-O2510 -S0 -C0 -FO15 -FD20000000 -FC800 -FN2 -FF0MK_P256 -FS00 -FL040000 -FF1MK_D32_72MHZ -FS110000000 -FL108000)
+            DeviceId:
+                - 6298
+            SFDFile:
+                - SFD\Freescale\Kinetis\MK20D5.sfr
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MK20DX256xxx7 Freescale MK20DX256xxx7
+        OGCoreOrChip:
+          state:
+          - 1

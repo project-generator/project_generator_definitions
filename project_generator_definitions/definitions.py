@@ -45,7 +45,6 @@ class ProGenMcus:
             mcu_path = self.mcus[mcu]
             return _load_record(mcu_path)
         else:
-            logging.debug("Target not found")
             return None
 
 class ProGenTargets:
@@ -63,7 +62,6 @@ class ProGenTargets:
             mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
             return _load_record(mcu_path)
         else:
-            logging.debug("Target not found")
             return None
 
 class ProGenDef:
@@ -129,7 +127,7 @@ class ProGenDef:
                 for k,v in mcu_record['tool_specific'].items():
                     if k == self.tool:
                         return True
-            except KeyError:
+            except (TypeError, KeyError) as err:
                 pass
             return False
         else:

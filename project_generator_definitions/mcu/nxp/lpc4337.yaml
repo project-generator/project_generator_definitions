@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc4337
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - LPC4337
+            Vendor:
+                - NXP
+            Cpu:
+                - IRAM(0x10000000-0x10007FFF) IRAM2(0x20000000-0x2000FFFF) IROM(0x1A000000-0x1A07FFFF) IROM2(0x1B000000-0x1B07FFFF) CLOCK(12000000) CPUTYPE("Cortex-M4") FPU2
+            FlashDriverDll:
+                - UL2CM3(-O975 -S0 -C0 -FO7 -FD10000000 -FC800 -FN2 -FF0LPC18xx43xx_512_BA -FS01A000000 -FL080000 -FF1LPC18xx43xx_512_BB -FS11B000000 -FL180000)
+            DeviceId:
+                - 7312
+            SFDFile:
+                - SFD\NXP\LPC43xx\LPC43xx.SFR

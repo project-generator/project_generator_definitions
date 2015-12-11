@@ -42,7 +42,7 @@ class TestAllTargets(TestCase):
     def test_targets_mcu_tool_specific_uvision_validity(self):
         for target in self.targets_list:
             mcu = self.progen_target.get_mcu_record(target)
-            if mcu['tool_specific']:
+            if 'tool_specific' in mcu:
                 try:
                     for tool in mcu['tool_specific'].keys():
                         if tool == 'uvision':
@@ -56,7 +56,7 @@ class TestAllTargets(TestCase):
     def test_targets_mcu_tool_specific_iar_validity(self):
         for target in self.targets_list:
             mcu = self.progen_target.get_mcu_record(target)
-            if mcu['tool_specific']:
+            if 'tool_specific' in mcu:
                 for tool in mcu['tool_specific'].keys():
                     if tool == 'iar' :
                         assert mcu['tool_specific']['iar']['OGChipSelectEditMenu']['state'][0]
@@ -65,7 +65,7 @@ class TestAllTargets(TestCase):
     def test_targets_mcu_tool_specific_coide_validity(self):
         for target in self.targets_list:
             mcu = self.progen_target.get_mcu_record(target)
-            if mcu['tool_specific']:
+            if 'tool_specific' in mcu:
                 for tool in mcu['tool_specific'].keys():
                     if tool == 'coide' :
                         assert mcu['tool_specific']['coide']['Device']['manufacturerName'][0]

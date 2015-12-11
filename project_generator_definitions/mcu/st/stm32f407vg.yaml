@@ -1,0 +1,7 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f407vg
+    core:
+        - cortex-m4

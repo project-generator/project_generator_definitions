@@ -2,14 +2,14 @@ mcu:
     vendor:
         - nxp
     name:
-        - lpc11u35fet48_501
+        - lpc11u35_401
     core:
         - cortex-m0
 tool_specific:
     iar:
         OGChipSelectEditMenu:
             state:
-                - LPC11U35FET48_501 NXP LPC11U35FET48_501
+                - LPC11U35FBD64_401 NXP LPC11U35FBD64_401
         OGCoreOrChip:
             state:
                 - 1
