@@ -15,6 +15,7 @@
 # Targets mapping to mcu
 # should be : target_name['mcu'] path to mcu file
 #             target_name['debugger'] debugger to be set up, not defined - None
+#                                     jtag/swd interface
 PROGENDEF_TARGETS = {
     'arch-ble': {
         'mcu':'mcu/nordic/nrf51822',
@@ -45,23 +46,38 @@ PROGENDEF_TARGETS = {
     },
     'efm32gg-stk': {
         'mcu':'mcu/siliconlabs/efm32gg990f1024',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'efm32hg-stk': {
         'mcu':'mcu/siliconlabs/efm32hg322f64',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'efm32wg-stk': {
         'mcu':'mcu/siliconlabs/efm32wg990f256',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'efm32zg-stk': {
         'mcu':'mcu/siliconlabs/efm32zg222f32',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'efm32lg-stk': {
         'mcu':'mcu/siliconlabs/efm32lg990f256',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'frdm-k20d50m': {
         'mcu':'mcu/freescale/mk20dx128xxx5',
@@ -158,7 +174,10 @@ PROGENDEF_TARGETS = {
     },
     'stk3700-gcc': {
         'mcu':'mcu/siliconlabs/efm32gg990f1024',
-        'debugger': 'j-link',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     },
     'odin-w2': {
         'mcu':'mcu/st/stm32f439zitx',
