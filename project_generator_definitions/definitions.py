@@ -57,12 +57,19 @@ class ProGenTargets:
 
     def get_mcu_record(self, target):
         if target in self.get_targets():
-            mcu_path = self.targets[target]
+            mcu_path = self.targets[target]['mcu']
             mcu_path = normpath(mcu_path)
             mcu_path = join(dirname(__file__), mcu_path) + '.yaml'
             return _load_record(mcu_path)
         else:
             return None
+
+    def get_debugger(self, target):
+        try:
+            debugger = self.targets[target]['debugger']
+        except KeyError:
+            debugger = None
+        return debugger
 
 class ProGenDef:
 
@@ -133,6 +140,9 @@ class ProGenDef:
         else:
             # supports generic part (mcu part)
             return True
+
+    def get_debugger(self, target):
+        return self.targets.get_debugger(target)
 
     def mcu_create(self, mcu_name, template_file):
         if self.definitions == None:
