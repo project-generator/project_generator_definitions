@@ -54,10 +54,40 @@ class UvisionDefinition:
             logging.debug("The project_file %s seems to be not valid .uvproj file.")
             return mcu
 
-        if 'RegisterFile' in uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']:
-            mcu['tool_specific']['uvision']['TargetOption']['RegisterFile'] = [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['RegisterFile']]
+        return mcu
+
+class UvisionDefinition5:
+
+    # TODO: create comomn uvision class (4 and 5 have many common keys)
+    def get_mcu_definition(self, project_file):
+        """ Parse project file to get mcu definition """
+        project_file = join(getcwd(), project_file)
+        uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        # Generic Target, should get from Target class !
+        mcu = MCU_TEMPLATE
+
+        try:
+            mcu['tool_specific'] = {
+                # legacy device
+                'uvision' : {
+                    'TargetOption' : {
+                        'Device' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Device']],
+                        'DeviceId' : [int(uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['DeviceId'])],
+                        'Vendor' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Vendor']],
+                        'Cpu' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Cpu']],
+                        'FlashDriverDll' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['FlashDriverDll']],
+                        'SFDFile' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['SFDFile']],
+                        'PackID' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['PackID']],
+                    }
+                }
+            }
+        except KeyError:
+            # validity check for uvision project
+            logging.debug("The project_file %s seems to be not valid .uvproj file.")
+            return mcu
 
         return mcu
+
 
 class IARDefinitions:
 

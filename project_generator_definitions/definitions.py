@@ -20,7 +20,7 @@ import glob
 from os.path import join, normpath, splitext, isfile, dirname, basename
 from os import listdir, getcwd
 
-from .tools import UvisionDefinition, IARDefinitions, CoIDEdefinitions
+from .tools import UvisionDefinition, UvisionDefinition5, IARDefinitions, CoIDEdefinitions
 from .target.targets import PROGENDEF_TARGETS
 
 def _load_record(file):
@@ -75,6 +75,7 @@ class ProGenDef:
 
     TOOL_SPECIFIC = {
         'uvision': UvisionDefinition,
+        'uvision5': UvisionDefinition5,
         'iar':     IARDefinitions,
         'coide':   CoIDEdefinitions
     }
