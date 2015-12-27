@@ -65,6 +65,8 @@ The data give in the mcu and target use lower cases, also files within this dire
 
 ### uVision
 
+There are two supported uvision. uvision (defaults to uvision4 at the moment) and uvision5. uVision 5 uses software packs, and it is compatible with the older version via legacy devices. Define legacy device as uvision/uvision4.
+
 ```
 tool_specific:
     uvision:
@@ -88,16 +90,6 @@ All information in the code above are from uVision project. All attributes needs
 How to get all this information for a new mcu? Create a new project in uVision, select your target, save the project. Then open the project in any text editor, and look for attributes inside TargetOption, as 'Device', 'Vendor', etc.
 
 Once you specified all needed information, test to build your project and check if the correct target is set in the uVision project.
-
-Note:
-You might spot there's RegisterFile for example for nrf51 mcu, which means use new device packs for the mcu.
-
-```
-    uvision:
-        TargetOption:
-            RegisterFile:
-                - $$Device:nRF51822_xxAA$Device\Include\nrf.h
-```
 
 ### IAR
 
