@@ -28,3 +28,10 @@ tool_specific:
             - $$Device:STM32L151RC$SVD\STM32L15x.svd
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L152xC ST STM32L152xC
+        OGCoreOrChip:
+          state:
+          - 1

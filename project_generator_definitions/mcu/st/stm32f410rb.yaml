@@ -20,3 +20,10 @@ tool_specific:
             - $$Device:STM32F410RBTx$CMSIS\SVD\STM32F410xx.svd
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F410x ST STM32F410x
+        OGCoreOrChip:
+          state:
+          - 1

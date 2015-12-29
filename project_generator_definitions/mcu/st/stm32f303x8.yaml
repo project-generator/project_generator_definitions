@@ -20,3 +20,10 @@ tool_specific:
             - $$Device:STM32F303K8$SVD\STM32F303x.svd
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F303x8 ST STM32F303x8
+        OGCoreOrChip:
+          state:
+          - 1

@@ -20,3 +20,10 @@ tool_specific:
             - null
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F469NI ST STM32F469NI
+        OGCoreOrChip:
+          state:
+          - 1

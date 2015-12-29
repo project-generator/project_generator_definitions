@@ -20,3 +20,10 @@ tool_specific:
             - $$Device:STM32F042K6$SVD\STM32F042x.svd
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F042x6 ST STM32F042x6
+        OGCoreOrChip:
+          state:
+          - 1

@@ -20,3 +20,10 @@ tool_specific:
             - SFD\ST\STM32F0xx\STM32F0xx.sfr
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F031x6 ST STM32F031x6
+        OGCoreOrChip:
+          state:
+          - 1

@@ -20,3 +20,10 @@ tool_specific:
             - SFD\ST\STM32F4xx\STM32F40x.sfr
             Vendor:
             - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F405RG ST STM32F405RG
+        OGCoreOrChip:
+          state:
+          - 1
