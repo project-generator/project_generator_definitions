@@ -31,24 +31,52 @@ PROGENDEF_TARGETS = {
      },
     'disco-f334c8': {
         'mcu':'mcu/st/stm32f334x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-f407vg': {
         'mcu':'mcu/st/stm32f401xe',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-f746ng': {
         'mcu':'mcu/st/stm32f746ng',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-l053c8': {
         'mcu':'mcu/st/stm32l053x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-l476vg': {
         'mcu':'mcu/st/stm32l476vg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-f469ni': {
         'mcu':'mcu/st/stm32f469nihx',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'disco-f429zi': {
         'mcu':'mcu/st/stm32f429zi',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'efm32gg-stk': {
         'mcu':'mcu/siliconlabs/efm32gg990f1024',
@@ -135,60 +163,136 @@ PROGENDEF_TARGETS = {
     },
     'nucleo-f030r8': {
         'mcu':'mcu/st/stm32f030x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-l053r8': {
         'mcu':'mcu/st/stm32l053x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f031k6': {
         'mcu':'mcu/st/stm32f031x',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f042k6': {
         'mcu':'mcu/st/stm32f042x',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f070rb': {
         'mcu':'mcu/st/stm32f070rb',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f072rb': {
         'mcu':'mcu/st/stm32f072rb',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f103rb': {
         'mcu':'mcu/st/stm32f103xb',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f091rc': {
         'mcu':'mcu/st/stm32f091rc',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f302r8': {
         'mcu':'mcu/st/stm32f302x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f303re': {
         'mcu':'mcu/st/stm32f303xe',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f303k8': {
         'mcu':'mcu/st/stm32f303x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f334r8': {
         'mcu':'mcu/st/stm32f334x8',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f401re': {
         'mcu':'mcu/st/stm32f401xe',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f410rb': {
         'mcu':'mcu/st/stm32f410rb',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f411re': {
         'mcu':'mcu/st/stm32f411re',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-f446re': {
         'mcu':'mcu/st/stm32f446re',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-l476rg': {
         'mcu':'mcu/st/stm32l476vg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-l073rz': {
         'mcu':'mcu/st/stm32l073xz',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'nucleo-l152re': {
         'mcu':'mcu/st/stm32l152xe',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
     'ublox-c027': {
         'mcu':'mcu/nxp/lpc1768',
@@ -205,8 +309,12 @@ PROGENDEF_TARGETS = {
     },
     'odin-w2': {
         'mcu':'mcu/st/stm32f439zitx',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
     },
-    'mts-mdot': {
+    'mts-mdot-f405rg': {
         'mcu':'mcu/st/stm32f405rg',
     },
     'mts-gambit': {
