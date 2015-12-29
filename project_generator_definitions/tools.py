@@ -68,8 +68,7 @@ class UvisionDefinition5:
 
         try:
             mcu['tool_specific'] = {
-                # legacy device
-                'uvision' : {
+                'uvision5' : {
                     'TargetOption' : {
                         'Device' : [uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['Device']],
                         'DeviceId' : [int(uvproj_dic['Project']['Targets']['Target']['TargetOption']['TargetCommonOption']['DeviceId'])],

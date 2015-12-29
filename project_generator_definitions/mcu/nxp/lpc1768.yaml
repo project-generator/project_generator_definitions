@@ -20,6 +20,22 @@ tool_specific:
                 - 4868
             SFDFile:
                 - SFD\NXP\LPC176x5x\LPC176x5x.SFR
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x00000000,0x80000) IRAM(0x10000000,0x8000) IRAM2(0x2007C000,0x8000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - LPC1768
+            DeviceId:
+            - 4868
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000 -FP0($$Device:LPC1768$Flash\LPC_IAP_512.FLM))
+            PackID:
+            - Keil.LPC1700_DFP.2.1.0
+            SFDFile:
+            - $$Device:LPC1768$SVD\LPC176x5x.svd
+            Vendor:
+            - NXP
     iar:
         OGChipSelectEditMenu:
             state:
