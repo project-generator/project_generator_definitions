@@ -116,6 +116,9 @@ PROGENDEF_TARGETS = {
     'frdm-k20d50m': {
         'mcu':'mcu/freescale/mk20dx128xxx5',
     },
+    'teensy-31': {
+        'mcu':'mcu/freescale/mk20dx256xxx7',
+    },
     'frdm-k22f': {
         'mcu':'mcu/freescale/mk22dn512xxx5',
     },
@@ -317,10 +320,27 @@ PROGENDEF_TARGETS = {
     'mts-mdot-f405rg': {
         'mcu':'mcu/st/stm32f405rg',
     },
+    'mts-mdot-f411re': {
+        'mcu':'mcu/st/stm32f411re',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
+    'mts-dragonfly-f411re': {
+        'mcu':'mcu/st/stm32f411re',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'mts-gambit': {
         'mcu':'mcu/freescale/mk64fn1m0xxx12',
     },
     'mote-l152rc': {
         'mcu':'mcu/st/stm32l152rc',
     },
+    'rblab-nrf51822': {
+        'mcu':'mcu/nordic/nrf51822',
+    }
 }
