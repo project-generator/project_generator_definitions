@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f410rb
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x20000) IRAM(0x20000000,0x8000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F410RBTx
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32F410RBTx$CMSIS\Flash\STM32F4xx_128.FLM))
+            SFDFile:
+            - $$Device:STM32F410RBTx$CMSIS\SVD\STM32F410xx.svd
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F410x ST STM32F410x
+        OGCoreOrChip:
+          state:
+          - 1

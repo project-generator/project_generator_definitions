@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f031x
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20000FFF) IROM(0x8000000-0x8007FFF) CLOCK(8000000) CPUTYPE("Cortex-M0")
+            Device:
+            - STM32F031K6
+            DeviceId:
+            - 6560
+            FlashDriverDll:
+            - UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F0xx_32 -FS08000000 -FL08000)
+            SFDFile:
+            - SFD\ST\STM32F0xx\STM32F0xx.sfr
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F031x6 ST STM32F031x6
+        OGCoreOrChip:
+          state:
+          - 1

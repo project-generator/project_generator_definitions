@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f469nihx
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x200000) IRAM(0x20000000,0x50000) IRAM2(0x10000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F469NIHx
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0STM32F4xx_2048 -FS08000000 -FL0200000 -FF1STM32F469_Quad_SPI -FS190000000 -FL12000000 -FP0($$Device:STM32F469NIHx$CMSIS\Flash\STM32F4xx_2048.FLM) -FP1($$Device:STM32F469NIHx$CMSIS\Flash\STM32F469_Quad_SPI.FLM))
+            SFDFile:
+            - null
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F469NI ST STM32F469NI
+        OGCoreOrChip:
+          state:
+          - 1

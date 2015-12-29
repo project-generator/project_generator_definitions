@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f042x
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x8000) IRAM(0x20000000,0x1800) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F042K6
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_32 -FS08000000 -FL08000 -FP0($$Device:STM32F042K6$Flash\STM32F0xx_32.FLM))
+            SFDFile:
+            - $$Device:STM32F042K6$SVD\STM32F042x.svd
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F042x6 ST STM32F042x6
+        OGCoreOrChip:
+          state:
+          - 1

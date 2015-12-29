@@ -13,3 +13,25 @@ tool_specific:
         OGCoreOrChip:
           state:
           - 1 
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20007FFF) IROM(0x8000000-0x803FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")
+            Device:
+            - STM32L151RC
+            DeviceId:
+            - 6524
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L1xx_384 -FS08000000 -FL060000 -FP0($$Device:STM32L151RC$Flash\STM32L1xx_384.FLM))
+            SFDFile:
+            - $$Device:STM32L151RC$SVD\STM32L15x.svd
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L152xC ST STM32L152xC
+        OGCoreOrChip:
+          state:
+          - 1

@@ -13,3 +13,17 @@ tool_specific:
         OGCoreOrChip:
           state:
           - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x802FFFF) CLOCK(8000000) CPUTYPE("Cortex-M0+")
+            Device:
+            - STM32L073RZ
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - ULP2CM3(-O207 -S8 -C0 -FO7 -FD20000000 -F5000 -FN1 -FF0STM32L0xx_192 -FS08000000 -FL030000)
+            SFDFile:
+            - null
+            Vendor:
+            - STMicroelectronics
