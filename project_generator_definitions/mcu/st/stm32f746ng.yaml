@@ -13,3 +13,17 @@ tool_specific:
         OGCoreOrChip:
           state:
           - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000-0x080FFFFF) IRAM(0x20000000-0x2004FFFF) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F746NG
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            SFDFile:
+            - $$Device:STM32F756IG$CMSIS\SVD\STM32F7x.svd
+            Vendor:
+            - STMicroelectronics

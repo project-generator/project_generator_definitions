@@ -44,6 +44,12 @@ PROGENDEF_TARGETS = {
     'disco-l476vg': {
         'mcu':'mcu/st/stm32l476vg',
     },
+    'disco-f469ni': {
+        'mcu':'mcu/st/stm32f469nihx',
+    },
+    'disco-f429zi': {
+        'mcu':'mcu/st/stm32f429zi',
+    },
     'efm32gg-stk': {
         'mcu':'mcu/siliconlabs/efm32gg990f1024',
         'debugger': {
@@ -106,10 +112,10 @@ PROGENDEF_TARGETS = {
     'hrm1017': {
         'mcu':'mcu/nordic/nrf51822',
     },
-    'max32600': {
+    'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
     },
-    'max32600': {
+    'max32600mbed': {
         'mcu':'mcu/maxim/max32600x85',
     },
     'mbed-lpc11u24': {
@@ -130,6 +136,15 @@ PROGENDEF_TARGETS = {
     'nucleo-f030r8': {
         'mcu':'mcu/st/stm32f030x8',
     },
+    'nucleo-l053r8': {
+        'mcu':'mcu/st/stm32l053x8',
+    },
+    'nucleo-f031k6': {
+        'mcu':'mcu/st/stm32f031x',
+    },
+    'nucleo-f042k6': {
+        'mcu':'mcu/st/stm32f042x',
+    },
     'nucleo-f070rb': {
         'mcu':'mcu/st/stm32f070rb',
     },
@@ -148,17 +163,26 @@ PROGENDEF_TARGETS = {
     'nucleo-f303re': {
         'mcu':'mcu/st/stm32f303xe',
     },
+    'nucleo-f303k8': {
+        'mcu':'mcu/st/stm32f303x8',
+    },
     'nucleo-f334r8': {
         'mcu':'mcu/st/stm32f334x8',
     },
     'nucleo-f401re': {
         'mcu':'mcu/st/stm32f401xe',
     },
+    'nucleo-f410rb': {
+        'mcu':'mcu/st/stm32f410rb',
+    },
     'nucleo-f411re': {
         'mcu':'mcu/st/stm32f411re',
     },
     'nucleo-f446re': {
         'mcu':'mcu/st/stm32f446re',
+    },
+    'nucleo-l476rg': {
+        'mcu':'mcu/st/stm32l476vg',
     },
     'nucleo-l073rz': {
         'mcu':'mcu/st/stm32l073xz',
@@ -181,5 +205,14 @@ PROGENDEF_TARGETS = {
     },
     'odin-w2': {
         'mcu':'mcu/st/stm32f439zitx',
+    },
+    'mts-mdot': {
+        'mcu':'mcu/st/stm32f405rg',
+    },
+    'mts-gambit': {
+        'mcu':'mcu/freescale/mk64fn1m0xxx12',
+    },
+    'mote-l152rc': {
+        'mcu':'mcu/st/stm32l152rc',
     },
 }

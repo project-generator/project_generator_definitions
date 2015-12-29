@@ -1,0 +1,22 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l152rc
+    core:
+        - cortex-m0
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20007FFF) IROM(0x8000000-0x803FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")
+            Device:
+            - STM32L152RC
+            DeviceId:
+            - 6520
+            FlashDriverDll:
+            - ULP2CM3(-O207 -S8 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32L1xx_256 -FS08000000 -FL040000)
+            SFDFile:
+            - $$Device:STM32L152RC$SVD\STM32L15x.svd
+            Vendor:
+            - STMicroelectronics

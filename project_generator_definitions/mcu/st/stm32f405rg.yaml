@@ -2,7 +2,7 @@ mcu:
     vendor:
         - st
     name:
-        - stm32f407vg
+        - stm32f405rg
     core:
         - cortex-m4
 tool_specific:
@@ -11,9 +11,9 @@ tool_specific:
             Cpu:
             - IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(25000000) CPUTYPE("Cortex-M4") FPU2
             Device:
-            - STM32F407VG
+            - STM32F405RG
             DeviceId:
-            - 6103
+            - 6100
             FlashDriverDll:
             - UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000)
             SFDFile:
