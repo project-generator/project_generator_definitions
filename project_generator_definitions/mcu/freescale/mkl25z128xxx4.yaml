@@ -20,6 +20,22 @@ tool_specific:
                 - 6533
             SFDFile:
                 - SFD\Freescale\Kinetis\MKL25Z4.sfr
+    uvision5:
+        TargetOption:
+            Device:
+                - MKL25Z128xxx4
+            Vendor:
+                - Freescale Semiconductor
+            Cpu:
+                - IRAM(0x1FFFF000-0x1FFFFFFF) IRAM2(0x20000000-0x20002FFF) IROM(0x0-0x1FFFF) CLOCK(8000000) CPUTYPE("Cortex-M0+") ELITTLE
+            FlashDriverDll:
+                - ULP2CM3(-O2510 -S0 -C0 -FO15 -FD20000000 -FC800 -FN1 -FF0MK_P128_48MHZ -FS00 -FL020000)
+            DeviceId:
+                - 6533
+            SFDFile:
+                - SFD\Freescale\Kinetis\MKL25Z4.sfr
+            PackID:
+                - Keil.Kinetis_KLxx_DFP.1.6.0
     iar:
         OGChipSelectEditMenu:
           state:

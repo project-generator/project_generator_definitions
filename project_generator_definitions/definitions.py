@@ -20,7 +20,7 @@ import glob
 from os.path import join, normpath, splitext, isfile, dirname, basename
 from os import listdir, getcwd
 
-from .tools import UvisionDefinition, IARDefinitions, CoIDEdefinitions
+from .tools import UvisionDefinition, UvisionDefinition5, IARDefinitions, CoIDEdefinitions
 from .target.targets import PROGENDEF_TARGETS
 
 def _load_record(file):
@@ -75,6 +75,7 @@ class ProGenDef:
 
     TOOL_SPECIFIC = {
         'uvision': UvisionDefinition,
+        'uvision5': UvisionDefinition5,
         'iar':     IARDefinitions,
         'coide':   CoIDEdefinitions
     }
@@ -154,5 +155,5 @@ class ProGenDef:
         # we can make it better, and ask for definitions repo clone, and add it
         # there, at least to MCU folder
         with open(join(getcwd(), mcu_name + '.yaml'), 'wt') as f:
-            f.write(yaml.safe_dump(data, default_flow_style=False, width=200))
+            f.write(yaml.safe_dump(data, indent=4, default_flow_style=False, width=200))
         return True
