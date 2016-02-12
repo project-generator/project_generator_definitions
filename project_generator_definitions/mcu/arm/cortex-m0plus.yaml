@@ -2,9 +2,9 @@ mcu:
     vendor:
         - arm
     name:
-        - cortex-m0p
+        - cortex-m0plus
     core:
-        - cortex-m0p
+        - cortex-m0plus
 tool_specific:
     uvision:
         TargetOption:
