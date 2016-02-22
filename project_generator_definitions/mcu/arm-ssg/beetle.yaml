@@ -1,0 +1,24 @@
+mcu:
+  core:
+  - cortex-m3
+  name:
+  - beetle
+  vendor:
+  - arm
+tool_specific:
+  uvision5:
+    TargetOption:
+      Cpu:
+      - IROM(0x00000000,0x40000) IRAM(0x20000000,0x20000) CPUTYPE("Cortex-M3") CLOCK(12000000) ESEL ELITTLE
+      Device:
+      - ARMCM3
+      DeviceId:
+      - 0
+      FlashDriverDll:
+      - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC3000 -FN1 -FF0NEW_DEVICE -FS00 -FL040000 -FP0($$Device:ARMCM3$Device/ARM/Flash/TSMCULP55V2_256.FLM))
+      PackID:
+      - ARM.CMSIS.4.5.0
+      SFDFile:
+      - $$Device:ARMCM3$Device\ARM\SVD\ARMCM3.svd
+      Vendor:
+      - ARM

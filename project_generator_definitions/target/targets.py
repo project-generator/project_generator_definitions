@@ -342,5 +342,12 @@ PROGENDEF_TARGETS = {
     },
     'rblab-nrf51822': {
         'mcu':'mcu/nordic/nrf51822',
+    },
+    'beetle': {
+        'mcu':'mcu/arm-ssg/beetle',
+        'debugger': {
+            'name': 'ulink-pro',
+            'interface': 'jtag',
+        }
     }
 }
