@@ -349,5 +349,8 @@ PROGENDEF_TARGETS = {
             'name': 'ulink-pro',
             'interface': 'jtag',
         }
+    },
+    'gr-peach': {
+        'mcu':'mcu/renesas/r7s721001',
     }
 }
