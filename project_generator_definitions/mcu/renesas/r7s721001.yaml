@@ -1,0 +1,15 @@
+mcu:
+    core:
+    - cortex-a9
+    name:
+    - r7s721001
+    vendor:
+    - renesas
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - R7S721001 Renesas R7S721001
+        OGCoreOrChip:
+            state:
+            - 1
