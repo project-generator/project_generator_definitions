@@ -1,0 +1,31 @@
+mcu:
+    core:
+    - cortex-m7f
+    name:
+    - stm32ff746zg
+    vendor:
+    - st
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - STM32F746ZG ST STM32F746ZG
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000-0x080FFFFF) IRAM(0x20000000-0x2004FFFF) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F746ZG
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            PackID:
+            - Keil.STM32F7xx_DFP.1.0.0
+            SFDFile:
+            - $$Device:STM32F756IG$CMSIS\SVD\STM32F7x.svd
+            Vendor:
+            - STMicroelectronics
