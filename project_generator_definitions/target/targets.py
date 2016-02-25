@@ -297,6 +297,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'nucleo-f746zg': {
+        'mcu':'mcu/st/stm32f746zg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'ublox-c027': {
         'mcu':'mcu/nxp/lpc1768',
     },
