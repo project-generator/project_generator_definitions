@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='project_generator_definitions',
-    version='0.2.6',
+    version='0.2.7',
     description='Project generator definitions for tools',
     author='Martin Kojtal',
     author_email='c0170@rocketmail.com',
