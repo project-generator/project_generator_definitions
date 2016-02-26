@@ -123,15 +123,33 @@ class IARDefinitions:
             configuration = ewp_dic['project']['configuration']
         index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'OGChipSelectEditMenu')
         OGChipSelectEditMenu = configuration['settings'][index_general]['data']['option'][index_option]
+        index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU2')
+        FPU2 = configuration['settings'][index_general]['data']['option'][index_option]
+        index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NrRegs')
+        NrRegs = configuration['settings'][index_general]['data']['option'][index_option]
+        index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NEON')
+        NEON = configuration['settings'][index_general]['data']['option'][index_option]
 
         mcu['tool_specific'] = {
             'iar' : {
+                # MCU selection
                 'OGChipSelectEditMenu' : {
                     'state' : [OGChipSelectEditMenu['state'].replace('\t', ' ', 1)],
                 },
+                # we use mcu
                 'OGCoreOrChip' : {
                     'state' : [1],
                 },
+                # FPU settings
+                'FPU2': {
+                    'state': [FPU2['state']]
+                },
+                'NrRegs': {
+                    'state': [NrRegs['state']]
+                },
+                'NEON': {
+                    'state': [NEON['state']]
+                }
             }
         }
         return mcu
