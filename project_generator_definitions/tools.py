@@ -113,6 +113,21 @@ class IARDefinitions:
             logging.debug("The project_file %s seems to be not valid .ewp file.")
             return mcu
 
+        # Fill in only must-have values, fpu will be added if defined for mcu
+        mcu['tool_specific'] = {
+            'iar' : {
+                # MCU selection
+                'OGChipSelectEditMenu' : {
+                    'state' : [],
+                },
+                # we use mcu
+                'OGCoreOrChip' : {
+                    'state' : [1],
+                },
+            }
+        }
+
+
         # we take 0 configuration or just configuration, as multiple configuration possible
         # debug, release, for mcu - does not matter, try and adjust
         try:
@@ -123,17 +138,34 @@ class IARDefinitions:
             configuration = ewp_dic['project']['configuration']
         index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'OGChipSelectEditMenu')
         OGChipSelectEditMenu = configuration['settings'][index_general]['data']['option'][index_option]
+        mcu['tool_specific']['iar']['OGChipSelectEditMenu']['state'].append(OGChipSelectEditMenu['state'].replace('\t', ' ', 1))
+        # It can be either FPU or FPU2
+        try:
+            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU2')
+            FPU2 = configuration['settings'][index_general]['data']['option'][index_option]
+            mcu['tool_specific']['iar']['FPU2'] = { 'state': [FPU2['state']] }
+        except TypeError:
+            pass
+        try:
+            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU')
+            FPU = configuration['settings'][index_general]['data']['option'][index_option]
+            mcu['tool_specific']['iar']['FPU'] = { 'state': [FPU['state']] }
+        except TypeError:
+            pass
+        # TODO: We shall look at this settings and group them somehow (=architecture)
+        try:
+            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NrRegs')
+            NrRegs = configuration['settings'][index_general]['data']['option'][index_option]
+            mcu['tool_specific']['iar']['NrRegs'] = { 'state': [NrRegs['state']] }
+        except TypeError:
+            pass
+        try:
+            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NEON')
+            NEON = configuration['settings'][index_general]['data']['option'][index_option]
+            mcu['tool_specific']['iar']['NEON'] = { 'state': [NEON['state']] }
+        except TypeError:
+            pass
 
-        mcu['tool_specific'] = {
-            'iar' : {
-                'OGChipSelectEditMenu' : {
-                    'state' : [OGChipSelectEditMenu['state'].replace('\t', ' ', 1)],
-                },
-                'OGCoreOrChip' : {
-                    'state' : [1],
-                },
-            }
-        }
         return mcu
 
 class CoIDEdefinitions:
