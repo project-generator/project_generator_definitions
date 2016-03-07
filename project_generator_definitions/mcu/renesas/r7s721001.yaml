@@ -7,9 +7,21 @@ mcu:
     - renesas
 tool_specific:
     iar:
+        FPU:
+            state:
+            - 3
+        GBECoreSlave:
+            state:
+            - 37
+        GFPUCoreSlave:
+            state:
+            - 37
         OGChipSelectEditMenu:
             state:
             - R7S721001 Renesas R7S721001
         OGCoreOrChip:
             state:
             - 1
+        Variant:
+            state:
+            - 37
