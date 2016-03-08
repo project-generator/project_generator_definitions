@@ -142,18 +142,9 @@ class IARDefinitions:
         # we keep this as the internal version. FPU - version 1, FPU2 version 2. 
         # TODO:We shall look at IAR versioning to get this right
         fileVersion = 1
-        # It can be either FPU or FPU2
         try:
-            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU2')
-            FPU2 = configuration['settings'][index_general]['data']['option'][index_option]
-            mcu['tool_specific']['iar']['FPU2'] = { 'state': [int(FPU2['state'])] }
-            fileVersion = 2
-        except TypeError:
-            pass
-        try:
-            index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU')
-            FPU = configuration['settings'][index_general]['data']['option'][index_option]
-            mcu['tool_specific']['iar']['FPU'] = { 'state': [int(FPU['state'])] }
+            if self._get_option(configuration['settings'][index_general]['data']['option'], 'FPU2'):
+                fileVersion = 2
         except TypeError:
             pass
 
@@ -162,18 +153,6 @@ class IARDefinitions:
         mcu['tool_specific']['iar']['GBECoreSlave'] = { 'state': [int(GBECoreSlave['state'])] }
 
         if fileVersion == 2:
-            try:
-                index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NrRegs')
-                NrRegs = configuration['settings'][index_general]['data']['option'][index_option]
-                mcu['tool_specific']['iar']['NrRegs'] = { 'state': [int(NrRegs['state'])] }
-            except TypeError:
-                pass
-            try:
-                index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'NEON')
-                NEON = configuration['settings'][index_general]['data']['option'][index_option]
-                mcu['tool_specific']['iar']['NEON'] = { 'state': [int(NEON['state'])] }
-            except TypeError:
-                pass
             index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'GFPUCoreSlave2')
             GFPUCoreSlave2 = configuration['settings'][index_general]['data']['option'][index_option]
             mcu['tool_specific']['iar']['GFPUCoreSlave2'] = { 'state': [int(GFPUCoreSlave2['state'])] }
