@@ -7,9 +7,6 @@ mcu:
     - renesas
 tool_specific:
     iar:
-        FPU:
-            state:
-            - 3
         GBECoreSlave:
             state:
             - 37
