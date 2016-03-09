@@ -10,21 +10,12 @@ tool_specific:
         CoreVariant:
             state:
             - 41
-        FPU2:
-            state:
-            - 6
         GFPUCoreSlave2:
             state:
             - 41
         GBECoreSlave:
             state:
             - 41
-        NEON:
-            state:
-            - 0
-        NrRegs:
-            state:
-            - 1
         OGChipSelectEditMenu:
             state:
             - STM32F746ZG ST STM32F746ZG
