@@ -21,7 +21,7 @@ PROGENDEF_TARGETS = {
         'mcu':'mcu/nordic/nrf51822',
      },
     'arch-pro': {
-        'mcu':'mcu/nordic/nrf51822',
+        'mcu':'mcu/nxp/lpc1768',
      },
     'dfcm-nnn40': {
         'mcu':'mcu/nordic/nrf51822',
