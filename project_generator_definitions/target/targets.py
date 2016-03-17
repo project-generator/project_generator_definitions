@@ -359,5 +359,9 @@ PROGENDEF_TARGETS = {
     },
     'gr-peach': {
         'mcu':'mcu/renesas/r7s721001',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     }
 }
