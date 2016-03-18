@@ -21,7 +21,7 @@ PROGENDEF_TARGETS = {
         'mcu':'mcu/nordic/nrf51822',
      },
     'arch-pro': {
-        'mcu':'mcu/nordic/nrf51822',
+        'mcu':'mcu/nxp/lpc1768',
      },
     'dfcm-nnn40': {
         'mcu':'mcu/nordic/nrf51822',
@@ -359,5 +359,9 @@ PROGENDEF_TARGETS = {
     },
     'gr-peach': {
         'mcu':'mcu/renesas/r7s721001',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     }
 }
