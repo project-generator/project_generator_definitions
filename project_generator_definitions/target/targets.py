@@ -164,6 +164,9 @@ PROGENDEF_TARGETS = {
     'nu-nuc472-nutiny': {
         'mcu':'mcu/nuvoton/nuc472hi8ae',
     },
+    'numbed-nuc472': {
+        'mcu':'mcu/nuvoton/nuc472hi8ae',
+    },
     'nucleo-f030r8': {
         'mcu':'mcu/st/stm32f030x8',
         'debugger': {
