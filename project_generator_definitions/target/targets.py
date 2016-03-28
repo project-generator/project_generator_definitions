@@ -171,6 +171,16 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'nutiny-m453': {
+        'mcu':'mcu/nuvoton/m453vg6ae',
+    },
+    'numbed-m453': {
+        'mcu':'mcu/nuvoton/m453vg6ae',
+        'debugger': {
+            'name': 'nu-link',
+            'interface': 'swd',
+        }
+    },
     'nucleo-f030r8': {
         'mcu':'mcu/st/stm32f030x8',
         'debugger': {
