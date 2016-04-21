@@ -37,7 +37,7 @@ PROGENDEF_TARGETS = {
         }
     },
     'disco-f407vg': {
-        'mcu':'mcu/st/stm32f401xe',
+        'mcu':'mcu/st/stm32f407vg',
         'debugger': {
             'name': 'st-link',
             'interface': 'swd',
