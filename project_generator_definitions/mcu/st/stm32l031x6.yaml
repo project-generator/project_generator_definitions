@@ -1,0 +1,31 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l031x6
+    core:
+        - cortex-m0
+tool_specific:
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20001FFF) IROM(0x8000000-0x8007FFF) CLOCK(8000000) CPUTYPE("Cortex-M0+")
+            Device:
+            - STM32L031K6
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            PackID:
+            - Keil.STM32L0xx_DFP.1.5.0
+            SFDFile:
+            - $$Device:STM32L031K6$SVD\STM32L051x.svd
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L031x6 ST STM32L031x6
+        OGCoreOrChip:
+          state:
+          - 1
