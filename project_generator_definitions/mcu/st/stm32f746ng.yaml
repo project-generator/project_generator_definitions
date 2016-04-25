@@ -27,3 +27,21 @@ tool_specific:
             - $$Device:STM32F756IG$CMSIS\SVD\STM32F7x.svd
             Vendor:
             - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x100000) IROM2(0x00200000,0x100000) IRAM(0x20010000,0x40000) IRAM2(0x20000000,0x10000) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F746NGHx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20010000 -FC1000 -FN1 -FF0STM32F7x_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7x_1024.FLM))
+            PackID:
+            - Keil.STM32F7xx_DFP.2.5.0
+            SFDFile:
+            - $$Device:STM32F746NGHx$CMSIS\SVD\STM32F7x.svd
+            RegisterFile:
+            - $$Device:STM32F746NGHx$Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
+            Vendor:
+            - STMicroelectronics
