@@ -31,8 +31,6 @@ tool_specific:
         TargetOption:
             Cpu:
             - IROM(0x08000000,0x80000) IRAM(0x20000000,0x20000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
-            AdsCpuType:
-            - "Cortex-M4"
             Device:
             - STM32F446RETx
             DeviceId:
@@ -43,5 +41,11 @@ tool_specific:
             - Keil.STM32F4xx_DFP.2.8.0
             SFDFile:
             - $$Device:STM32F446RETx$CMSIS\SVD\STM32F446x.svd
+            RegisterFile:
+            - $$Device:STM32F446RETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+            uLib:
+            - 0
+            OptFeed:
+            - 0
             Vendor:
             - STMicroelectronics
