@@ -391,5 +391,12 @@ PROGENDEF_TARGETS = {
             'name': 'cmsis-dap',
             'interface': 'swd',
         }
+    },
+    'cocorico': {
+        'mcu':'mcu/nxp/lpc812m101',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     }
 }
