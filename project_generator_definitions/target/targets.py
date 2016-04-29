@@ -113,6 +113,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'efm32pg-stk': {
+        'mcu':'mcu/siliconlabs/efm32pg1b200f256gm48',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
+    },
     'frdm-k20d50m': {
         'mcu':'mcu/freescale/mk20dx128xxx5',
     },
