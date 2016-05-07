@@ -20,3 +20,25 @@ tool_specific:
             - SFD\ST\STM32F4xx\STM32F40x.sfr
             Vendor:
             - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x100000) IRAM(0x20000000,0x20000) IRAM2(0x10000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F407VGTx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32F407VGTx$CMSIS\Flash\STM32F4xx_1024.FLM))
+            PackID:
+            - Keil.STM32F4xx_DFP.2.8.0
+            SFDFile:
+            - $$Device:STM32F407VGTx$CMSIS\SVD\STM32F40x.svd
+            RegisterFile:
+            - $$Device:STM32F407VGTx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+            uLib:
+            - 0
+            OptFeed:
+            - 0
+            Vendor:
+            - STMicroelectronics
