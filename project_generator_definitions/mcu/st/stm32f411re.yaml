@@ -16,14 +16,14 @@ tool_specific:
     uvision:
         TargetOption:
             Cpu:
-            - IROM(0x08000000,0x40000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(84000000) ELITTLE
+            - IROM(0x08000000,0x80000) IRAM(0x20000000,0x20000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
             Device:
-            - STM32F401RC
+            - STM32F411RE
             DeviceId:
             - 7383
             FlashDriverDll:
-            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_256 -FS08000000 -FL040000 -FP0($$Device:STM32F401RC$Flash\STM32F4xx_256.FLM))
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F411RETx$CMSIS\Flash\STM32F4xx_512.FLM))
             SFDFile:
-            - $$Device:STM32F401RC$SVD\STM32F40x.svd
+            - $$Device:STM32F411RETx$CMSIS\SVD\STM32F411xx.svd
             Vendor:
             - STMicroelectronics
