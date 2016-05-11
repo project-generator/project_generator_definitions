@@ -20,5 +20,7 @@ tool_specific:
       - ARM.CMSIS.4.5.0
       SFDFile:
       - $$Device:ARMCM3$Device\ARM\SVD\ARMCM3.svd
+      RegisterFile:
+      - null
       Vendor:
       - ARM

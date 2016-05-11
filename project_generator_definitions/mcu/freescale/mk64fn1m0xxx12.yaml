@@ -34,6 +34,8 @@ tool_specific:
                 - 7425
             SFDFile:
                 - $$Device:MK64FN1M0xxx12$SVD\MK64F12.svd
+            RegisterFile:
+            - $$Device:MK64FN1M0xxx12$Device\Include\MK64F12.h
             PackID:
                 - Keil.Kinetis_K60_DFP.1.4.0
     iar:
