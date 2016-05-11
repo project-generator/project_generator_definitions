@@ -36,9 +36,5 @@ tool_specific:
             - $$Device:STM32F407VGTx$CMSIS\SVD\STM32F40x.svd
             RegisterFile:
             - $$Device:STM32F407VGTx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-            uLib:
-            - 0
-            OptFeed:
-            - 0
             Vendor:
             - STMicroelectronics

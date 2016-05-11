@@ -36,10 +36,6 @@ tool_specific:
             - $$Device:STM32F042K6$SVD\STM32F042x.svd
             RegisterFile:
             - $$Device:STM32F042K6$Device\Include\stm32f0xx.h
-            uLib:
-            - 1
-            OptFeed:
-            - 1
             Vendor:
             - STMicroelectronics
     iar:

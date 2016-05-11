@@ -43,9 +43,5 @@ tool_specific:
             - $$Device:STM32F303RE$SVD\STM32F303xE.svd
             RegisterFile:
             - $$Device:STM32F303RE$Device\Include\stm32f3xx.h
-            uLib:
-            - 0
-            OptFeed:
-            - 0
             Vendor:
             - STMicroelectronics

@@ -43,9 +43,5 @@ tool_specific:
             - $$Device:STM32F411RETx$CMSIS\SVD\STM32F411xx.svd
             RegisterFile:
             - $$Device:STM32F411RETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-            uLib:
-            - 0
-            OptFeed:
-            - 0
             Vendor:
             - STMicroelectronics

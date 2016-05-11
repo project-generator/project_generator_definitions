@@ -43,9 +43,5 @@ tool_specific:
             - $$Device:STM32F746NGHx$CMSIS\SVD\STM32F7x.svd
             RegisterFile:
             - $$Device:STM32F746NGHx$Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
-            uLib:
-            - 0
-            OptFeed:
-            - 0
             Vendor:
             - STMicroelectronics

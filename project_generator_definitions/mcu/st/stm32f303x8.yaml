@@ -36,10 +36,6 @@ tool_specific:
             - $$Device:STM32F303K8$SVD\STM32F303x.svd
             RegisterFile:
             - $$Device:STM32F303K8$Device\Include\stm32f3xx.h
-            uLib:
-            - 0
-            OptFeed:
-            - 0
             Vendor:
             - STMicroelectronics
     iar:
