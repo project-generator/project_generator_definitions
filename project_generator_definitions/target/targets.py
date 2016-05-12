@@ -113,6 +113,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'efm32pg-stk': {
+        'mcu':'mcu/siliconlabs/efm32pg1b200f256gm48',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
+    },
     'frdm-k20d50m': {
         'mcu':'mcu/freescale/mk20dx128xxx5',
     },
@@ -387,6 +394,13 @@ PROGENDEF_TARGETS = {
     },
     'gr-peach': {
         'mcu':'mcu/renesas/r7s721001',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
+    'cocorico': {
+        'mcu':'mcu/nxp/lpc812m101',
         'debugger': {
             'name': 'cmsis-dap',
             'interface': 'swd',

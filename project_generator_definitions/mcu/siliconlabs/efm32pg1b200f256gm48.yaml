@@ -1,0 +1,40 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - efm32pg1b200f256gm48
+    vendor:
+    - Silicon Labs
+tool_specific:
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x00000000,0x00020000) IRAM(0x20000000,0x00008000) CPUTYPE("Cortex-M4") FPU2 CLOCK(40000000) ELITTLE
+            Device:
+            - EFM32PG1B200F256GM48
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC8000 -FN1 -FF0GECKOP2 -FS00 -FL020000 -FP0($$Device:EFM32PG1B200F256GM48$Flash\GECKOP2.FLM))
+            PackID:
+            - Keil.EFM32PG1B_DFP.1.0.0
+            SFDFile:
+            - $$Device:EFM32PG1B200F256GM48$SVD\EFM32PG1B\EFM32PG1B200F256GM48.svd
+            Vendor:
+            - Silicon Labs
+    iar:
+        CoreVariant:
+            state:
+            - 39
+        GBECoreSlave:
+            state:
+            - 39
+        GFPUCoreSlave2:
+            state:
+            - 39
+        OGChipSelectEditMenu:
+            state:
+            - EFM32PG1B200F256GM48 SiliconLaboratories EFM32PG1B200F256GM48
+        OGCoreOrChip:
+            state:
+            - 1
