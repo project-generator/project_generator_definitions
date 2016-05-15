@@ -34,6 +34,8 @@ tool_specific:
             - Keil.LPC1700_DFP.2.1.0
             SFDFile:
             - $$Device:LPC1768$SVD\LPC176x5x.svd
+            RegisterFile:
+            - $$Device:LPC1768$Device\Include\LPC17xx.h
             Vendor:
             - NXP
     iar:

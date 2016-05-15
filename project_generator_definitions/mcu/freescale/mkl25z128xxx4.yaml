@@ -34,6 +34,8 @@ tool_specific:
                 - 6533
             SFDFile:
                 - SFD\Freescale\Kinetis\MKL25Z4.sfr
+            RegisterFile:
+            - $$Device:MKL25Z128xxx4$Device\Include\MKL25Z4.h
             PackID:
                 - Keil.Kinetis_KLxx_DFP.1.6.0
     iar:

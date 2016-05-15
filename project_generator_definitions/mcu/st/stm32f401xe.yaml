@@ -20,6 +20,24 @@ tool_specific:
                 - 7383
             SFDFile:
                 - $$Device:STM32F401RETx$CMSIS\SVD\STM32F401xE.svd
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x80000) IRAM(0x20000000,0x18000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F401RETx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F401RETx$CMSIS\Flash\STM32F4xx_512.FLM))
+            PackID:
+            - Keil.STM32F4xx_DFP.2.8.0
+            SFDFile:
+            - $$Device:STM32F401RETx$CMSIS\SVD\STM32F401xE.svd
+            RegisterFile:
+            - $$Device:STM32F401RETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+            Vendor:
+            - STMicroelectronics
     iar:
         OGChipSelectEditMenu:
           state:
