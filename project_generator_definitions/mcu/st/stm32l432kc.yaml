@@ -1,0 +1,31 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l432kc
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L432KC ST STM32L432KC
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x2000BFFF) IRAM2(0x10000000-0x10003FFF) IROM(0x08000000-0x803FFFF) CLOCK(12000000) CPUTYPE("Cortex-M4")
+            Device:
+            - STM32L432KCUx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx_256 -FS08000000 -FL040000 -FP0($$Device:STM32L432KCUx$Flash\STM32L4xx_256.FLM))
+            PackID:
+            - Keil.STM32L4xx_DFP.1.0.2
+            SFDFile:
+            - $$Device:STM32L432KCUx$SVD\STM32L4x.svd
+            Vendor:
+            - STMicroelectronics
