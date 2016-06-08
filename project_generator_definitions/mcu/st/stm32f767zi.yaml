@@ -1,0 +1,26 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f767zi
+    core:
+        - cortex-m7f
+tool_specific:
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x200000) IROM2(0x00200000,0x200000) IRAM(0x20020000,0x60000) IRAM2(0x20000000,0x20000) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F767ZITx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20020000 -FC1000 -FN2 -FF0STM32F7x_2048 -FS08000000 -FL0200000 -FF1STM32F7xTCM_2048 -FS1200000 -FL1200000 -FP0($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7x_2048.FLM) -FP1($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7xTCM_2048.FLM))
+            PackID:
+            - Keil.STM32F7xx_DFP.2.6.0
+            SFDFile:
+            - $$Device:STM32F767ZITx$CMSIS\SVD\STM32F7x7.svd
+            RegisterFile:
+            - $$Device:STM32F767ZITx$Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
+            Vendor:
+            - STMicroelectronics

@@ -27,3 +27,21 @@ tool_specific:
             - null
             Vendor:
             - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00005000) IROM(0x08000000,0x00030000) CPUTYPE("Cortex-M0+") CLOCK(8000000) ELITTLE
+            Device:
+            - STM32L073RZHx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L0xx_192 -FS08000000 -FL030000 -FP0($$Device:STM32L073RZHx$Flash\STM32L0xx_192.FLM))
+            PackID:
+            - Keil.STM32L0xx_DFP.1.5.0
+            SFDFile:
+            - $$Device:STM32L073RZHx$SVD\STM32L07x.svd
+            RegisterFile:
+            - $$Device:STM32L073RZHx$Device\Include\stm32l0xx.h
+            Vendor:
+            - STMicroelectronics
