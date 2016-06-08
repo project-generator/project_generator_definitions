@@ -315,7 +315,7 @@ PROGENDEF_TARGETS = {
         }
     },
     'nucleo-l476rg': {
-        'mcu':'mcu/st/stm32l476vg',
+        'mcu':'mcu/st/stm32l476rg',
         'debugger': {
             'name': 'st-link',
             'interface': 'swd',
@@ -337,6 +337,13 @@ PROGENDEF_TARGETS = {
     },
     'nucleo-f746zg': {
         'mcu':'mcu/st/stm32f746zg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
+    'nucleo-f767zi': {
+        'mcu':'mcu/st/stm32f767zi',
         'debugger': {
             'name': 'st-link',
             'interface': 'swd',
