@@ -2,9 +2,13 @@
 
 This repository defines definitions for targets and mcus. They are used to set proper data in the tools.
 
-## Create a new mcu yaml definition
+## How to add a new target
 
-This module provides a script to extract the information needed to create a new yaml mcu definiton file.
+This module provides a script (``progendef``) to extract the information needed to create a new YAML mcu definiton file.
+
+Target consists of:
+- target YAML file - see Targets section below, and define your own and place it inside ``project_generator_definitions/target``
+- mcu YAML file - see MCU section below. Use ``progendef`` script to create a new mcu YAML file
 
 An example for creating mcu.yaml for lpc1768, from a project file lpc1768_blinky.ewp (IAR)
 
@@ -12,7 +16,7 @@ An example for creating mcu.yaml for lpc1768, from a project file lpc1768_blinky
 progendef create -m lpc1768 -t iar -f lpc1768_blinky.ewp
 ```
 
-This creates lpc1768.yaml file in the current directory.
+This creates ``lpc1768.yaml`` file in the current directory. This YAML file should be placed in ``project_generator_definitions/mcu``. There should be a vendor folder, and MCU file inside. 
 
 ## YAML records
 
