@@ -6,6 +6,13 @@ mcu:
     core:
         - cortex-m0
 tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F031x6 ST STM32F031x6
+        OGCoreOrChip:
+          state:
+          - 1
     uvision:
         TargetOption:
             Cpu:
@@ -20,10 +27,21 @@ tool_specific:
             - SFD\ST\STM32F0xx\STM32F0xx.sfr
             Vendor:
             - STMicroelectronics
-    iar:
-        OGChipSelectEditMenu:
-          state:
-          - STM32F031x6 ST STM32F031x6
-        OGCoreOrChip:
-          state:
-          - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x1000) IROM(0x08000000,0x8000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F031K6
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_32 -FS08000000 -FL08000 -FP0($$Device:STM32F031K6$Flash\STM32F0xx_32.FLM))
+            PackID:
+            - Keil.STM32F0xx_DFP.1.5.0
+            SFDFile:
+            - $$Device:STM32F031K6$SVD\STM32F0x1.svd
+            RegisterFile:
+            - $$Device:STM32F031K6$Device\Include\stm32f0xx.h
+            Vendor:
+            - STMicroelectronics

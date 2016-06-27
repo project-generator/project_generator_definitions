@@ -6,6 +6,13 @@ mcu:
     core:
         - cortex-m0
 tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F042x6 ST STM32F042x6
+        OGCoreOrChip:
+          state:
+          - 1
     uvision:
         TargetOption:
             Cpu:
@@ -38,10 +45,3 @@ tool_specific:
             - $$Device:STM32F042K6$Device\Include\stm32f0xx.h
             Vendor:
             - STMicroelectronics
-    iar:
-        OGChipSelectEditMenu:
-          state:
-          - STM32F042x6 ST STM32F042x6
-        OGCoreOrChip:
-          state:
-          - 1
