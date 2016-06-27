@@ -20,7 +20,7 @@ tool_specific:
             Vendor:
                 - STMicroelectronics
             Cpu:
-                - IROM(0x08000000,0x80000) IRAM(0x20000000,0x18000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+                - IROM(0x08000000,0x80000) IRAM(0x20000000,0x18000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
             FlashDriverDll:
                 - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F401RETx$CMSIS\Flash\STM32F4xx_512.FLM))
             DeviceId:
