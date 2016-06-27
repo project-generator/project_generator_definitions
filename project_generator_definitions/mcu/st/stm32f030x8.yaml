@@ -16,7 +16,7 @@ tool_specific:
     uvision:
         TargetOption:
             Cpu:
-            - IROM(0x08000000,0x10000) IRAM(0x20000000,0x2000) CPUTYPE("Cortex-M0") CLOCK(48000000) ELITTLE
+            - IROM(0x08000000,0x10000) IRAM(0x20000000,0x2000) CPUTYPE("Cortex-M0") CLOCK(8000000) ELITTLE
             Device:
             - STM32F030R8
             DeviceId:
