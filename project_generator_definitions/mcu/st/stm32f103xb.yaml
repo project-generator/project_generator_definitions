@@ -27,3 +27,21 @@ tool_specific:
             - SFD\ST\STM32F1xx\STM32F103xx.sfr
             Vendor:
             - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x5000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F103RB
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_128 -FS08000000 -FL020000 -FP0($$Device:STM32F103RB$Flash\STM32F10x_128.FLM))
+            PackID:
+            - Keil.STM32F1xx_DFP.2.1.0
+            SFDFile:
+            - $$Device:STM32F103RB$SVD\STM32F103xx.svd
+            RegisterFile:
+            - $$Device:STM32F103RB$Device\Include\stm32f10x.h
+            Vendor:
+            - STMicroelectronics
