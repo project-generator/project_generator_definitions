@@ -18,13 +18,13 @@ tool_specific:
             Cpu:
             - IROM(0x08000000,0x100000) IRAM(0x20000000,0x18000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
             Device:
-            - STM32L476RG
+            - STM32L476VG
             DeviceId:
             - 0
             FlashDriverDll:
             - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx -FS08000000 -FL0100000 -FP0($$Device:STM32L476RG$Flash\STM32L4xx.FLM))
             SFDFile:
-            - $$Device:STM32L476RG$SVD\STM32L4x.svd
+            - $$Device:STM32L476VG$SVD\STM32L4x.svd
             Vendor:
             - STMicroelectronics
     uvision5:
