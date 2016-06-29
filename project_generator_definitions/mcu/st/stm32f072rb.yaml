@@ -27,3 +27,21 @@ tool_specific:
             - SFD\ST\STM32F0xx\STM32F072x.SFR
             Vendor:
             - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x4000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M0") CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F072RB
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32F070RB$Flash\STM32F0xx_128.FLM))
+            PackID:
+            - Keil.STM32F0xx_DFP.1.5.0
+            SFDFile:
+            - $$Device:STM32F072RB$SVD\STM32F0x0.svd
+            RegisterFile:
+            - $$Device:STM32F072RB$Device\Include\stm32f0xx.h
+            Vendor:
+            - STMicroelectronics
