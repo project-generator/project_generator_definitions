@@ -6,10 +6,17 @@ mcu:
     core:
         - cortex-m4
 tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F303x8 ST STM32F303x8
+        OGCoreOrChip:
+          state:
+          - 1
     uvision:
         TargetOption:
             Cpu:
-            - IROM(0x08000000,0x00010000) IRAM(0x20000000,0x00003000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            - IRAM(0x20000000,0x00003000) IROM(0x08000000,0x00010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
             Device:
             - STM32F303K8
             DeviceId:
@@ -23,7 +30,7 @@ tool_specific:
     uvision5:
         TargetOption:
             Cpu:
-            - IROM(0x08000000,0x00010000) IRAM(0x20000000,0x00003000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            - IRAM(0x20000000,0x00003000) IROM(0x08000000,0x00010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
             Device:
             - STM32F303K8
             DeviceId:
@@ -38,10 +45,3 @@ tool_specific:
             - $$Device:STM32F303K8$Device\Include\stm32f3xx.h
             Vendor:
             - STMicroelectronics
-    iar:
-        OGChipSelectEditMenu:
-          state:
-          - STM32F303x8 ST STM32F303x8
-        OGCoreOrChip:
-          state:
-          - 1

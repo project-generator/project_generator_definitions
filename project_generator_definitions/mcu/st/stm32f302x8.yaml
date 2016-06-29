@@ -16,14 +16,32 @@ tool_specific:
     uvision:
         TargetOption:
             Cpu:
-            - IROM(0x08000000,0x40000) IRAM(0x20000000,0x8000) CPUTYPE("Cortex-M4") FPU2 CLOCK(72000000) ELITTLE
+            - IROM(0x08000000,0x40000) IRAM(0x20000000,0x8000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
             Device:
-            - STM32F302RC
+            - STM32F302R8
             DeviceId:
             - 6576
             FlashDriverDll:
-            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F3xx_256 -FS08000000 -FL040000 -FP0($$Device:STM32F302RC$Flash\STM32F3xx_256.FLM))
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F3xx_256 -FS08000000 -FL010000 -FP0($$Device:STM32F302R8$Flash\STM32F3xx_256.FLM))
             SFDFile:
             - $$Device:STM32F302RC$SVD\STM32F30x.svd
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00004000) IROM(0x08000000,0x00010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F302R8
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F3xx_256 -FS08000000 -FL010000 -FP0($$Device:STM32F302R8$Flash\STM32F3xx_256.FLM))
+            PackID:
+            - Keil.STM32F3xx_DFP.1.3.0
+            SFDFile:
+            - $$Device:STM32F302R8$SVD\STM32F302x.svd
+            RegisterFile:
+            - $$Device:STM32F302R8$Device\Include\stm32f3xx.h
             Vendor:
             - STMicroelectronics
