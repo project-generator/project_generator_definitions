@@ -1,0 +1,33 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f446ze
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F446ZE ST STM32F446ZE
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x80000) IRAM(0x20000000,0x20000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F446ZETx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F446ZETx$CMSIS\Flash\STM32F4xx_512.FLM))
+            PackID:
+            - Keil.STM32F4xx_DFP.2.9.0
+            SFDFile:
+            - $$Device:STM32F446ZETx$CMSIS\SVD\STM32F446x.svd
+            RegisterFile:
+            - $$Device:STM32F446ZETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+            Vendor:
+            - STMicroelectronics
