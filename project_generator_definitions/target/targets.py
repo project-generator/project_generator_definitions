@@ -19,9 +19,20 @@
 PROGENDEF_TARGETS = {
     'arch-ble': {
         'mcu':'mcu/nordic/nrf51822',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
      },
     'arch-pro': {
         'mcu':'mcu/nxp/lpc1768',
+     },
+    'arch-max': {
+        'mcu':'mcu/st/stm32f407vg',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
      },
     'dfcm-nnn40': {
         'mcu':'mcu/nordic/nrf51822',
@@ -167,6 +178,10 @@ PROGENDEF_TARGETS = {
     },
     'nrf51-dk': {
         'mcu':'mcu/nordic/nrf51822',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     },
     'nrf51-dongle': {
         'mcu':'mcu/nordic/nrf51822',

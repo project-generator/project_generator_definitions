@@ -20,6 +20,24 @@ tool_specific:
                 - 7461
             SFDFile:
                 - SFD\EnergyMicro\EFM32ZG\EFM32ZG222F32.SFR
+    uvision5:
+        TargetOption:
+            Cpu:
+                - IRAM(0x20000000,0x00001000) IROM(0x00000000,0x00008000) CPUTYPE("Cortex-M0+") CLOCK(24000000) ELITTLE
+            Device:
+                - EFM32ZG222F32
+            DeviceId:
+                - null
+            FlashDriverDll:
+                - UL2CM3(-O78 -S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0EFM32ZG -FS00 -FL08000 -FP0($$Device:EFM32ZG222F32$Flash\EFM32ZG.FLM))
+            PackID:
+                - Keil.EFM32ZGxxx_DFP.1.2.0
+            SFDFile:
+                - $$Device:EFM32ZG222F32$SVD\EFM32ZG\EFM32ZG222F32.svd
+            RegisterFile:
+                - $$Device:EFM32ZG222F32$Device\EFM32ZG\Include\em_device.h
+            Vendor:
+                - Silicon Labs
     iar:
         OGChipSelectEditMenu:
           state:
