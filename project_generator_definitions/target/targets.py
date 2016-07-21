@@ -196,6 +196,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'numaker-pfm-nuc472': {
+        'mcu':'mcu/nuvoton/nuc472hi8ae',
+        'debugger': {
+            'name': 'nu-link',
+            'interface': 'swd',
+        }
+    },
     'nutiny-m453': {
         'mcu':'mcu/nuvoton/m453vg6ae',
         'debugger': {
@@ -204,6 +211,13 @@ PROGENDEF_TARGETS = {
         }
     },
     'numbed-m453': {
+        'mcu':'mcu/nuvoton/m453vg6ae',
+        'debugger': {
+            'name': 'nu-link',
+            'interface': 'swd',
+        }
+    },
+    'numaker-pfm-m453': {
         'mcu':'mcu/nuvoton/m453vg6ae',
         'debugger': {
             'name': 'nu-link',
