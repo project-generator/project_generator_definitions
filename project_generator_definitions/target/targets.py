@@ -496,5 +496,12 @@ PROGENDEF_TARGETS = {
             'name': 'cmsis-dap',
             'interface': 'swd',
         }
+    },
+    'ncs36510': {
+        'mcu':'mcu/onsemi/ncs36510',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     }
 }

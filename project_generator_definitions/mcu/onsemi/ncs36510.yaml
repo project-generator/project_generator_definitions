@@ -1,0 +1,38 @@
+mcu:
+    core:
+    - cortex-m3
+    name:
+    - ncs36510
+    vendor:
+    - ON Semiconductor
+tool_specific:
+    iar:
+        CoreVariant:
+            state:
+            - 38
+        GBECoreSlave:
+            state:
+            - 38
+        GFPUCoreSlave2:
+            state:
+            - 38
+        OGChipSelectEditMenu:
+            state:
+            - Orion ON Semiconductor NCS36510
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision:
+        TargetOption:
+            Device:
+                - Cortex-M3
+            Vendor:
+                - ARM
+            Cpu:
+                - IRAM(0x3FFF4000-0x3FFFFFFF) IRAM2(0x0-0x0) IROM(0x00003000-0x00051FFF) CLOCK(32000000) CPUTYPE("Cortex-M3")
+            FlashDriverDll:
+                - 0
+            DeviceId:
+                - 0
+            SFDFile:
+                - 0
