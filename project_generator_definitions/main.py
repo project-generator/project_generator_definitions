@@ -29,7 +29,7 @@ def main():
     parser.add_argument('-v', dest='verbosity', action='count', default=0,
                         help='Increase the verbosity of the output (repeat for more verbose output)')
     parser.add_argument('-q', dest='quietness', action='count', default=0,
-                        help='Decrease the verbosity of the output (repeat for more verbose output)')
+                        help='Decrease the verbosity of the output (repeat for even less verbose output)')
 
     parser.add_argument("--version", action='version',
                         version=pkg_resources.require("project_generator_definitions")[0].version, help="Display version")
