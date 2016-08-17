@@ -168,6 +168,13 @@ PROGENDEF_TARGETS = {
     'hrm1017': {
         'mcu':'mcu/nordic/nrf51822',
     },
+    'ty51822r3': {
+        'mcu':'mcu/nordic/nrf51822',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
     'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
     },
