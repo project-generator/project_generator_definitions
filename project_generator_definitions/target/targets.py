@@ -165,6 +165,9 @@ PROGENDEF_TARGETS = {
     'frdm-kl46z': {
         'mcu':'mcu/freescale/mkl46z256xxx4',
     },
+    'hexiwear-k64f': {
+        'mcu':'mcu/freescale/mk64fn1m0xxx12',
+     },
     'hrm1017': {
         'mcu':'mcu/nordic/nrf51822',
     },
