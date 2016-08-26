@@ -423,6 +423,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'arducleo-f051k8': {
+        'mcu':'mcu/st/stm32f051x',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
     'ublox-c027': {
         'mcu':'mcu/nxp/lpc1768',
     },
