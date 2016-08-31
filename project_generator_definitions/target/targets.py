@@ -184,6 +184,9 @@ PROGENDEF_TARGETS = {
     'max32600mbed': {
         'mcu':'mcu/maxim/max32600x85',
     },
+    'max32620hsp': {
+        'mcu':'mcu/maxim/max32620',
+    },
     'mbed-lpc11u24': {
         'mcu':'mcu/nxp/lpc11u24_201',
     },
