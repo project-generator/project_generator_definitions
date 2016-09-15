@@ -332,6 +332,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+     'nucleo-f303ze': {
+        'mcu':'mcu/st/stm32f303ze',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'nucleo-f303k8': {
         'mcu':'mcu/st/stm32f303x8',
         'debugger': {
