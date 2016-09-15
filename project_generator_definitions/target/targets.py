@@ -199,6 +199,13 @@ PROGENDEF_TARGETS = {
     'mkit': {
         'mcu':'mcu/nordic/nrf51822',
     },
+    'mtm-mtconnect04s': {
+        'mcu':'mcu/nordic/nrf51822',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+     },
     'nrf51-dk': {
         'mcu':'mcu/nordic/nrf51822',
         'debugger': {
