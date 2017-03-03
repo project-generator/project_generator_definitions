@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc4322_jet100
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - LPC4322_M4 NXP LPC4322_M4
+        OGCoreOrChip:
+            state:
+                - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x10000000,0x8000) IRAM2(0x20000000,0x4000) IROM(0x1A000000,0x80000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - LPC4322:Cortex-M4
+            DeviceId:
+            - 7322
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC18xx43xx_512_BA -FS01A000000 -FL080000 -FP0($$Device:LPC4322$Flash\LPC18xx43xx_512_BA.FLM))
+            SFDFile:
+            - $$Device:LPC4322$SVD\LPC43xx.svd
+            Vendor:
+            - NXP
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x10000000,0x8000) IRAM2(0x20000000,0x4000) IROM(0x1A000000,0x80000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - LPC4322:Cortex-M4
+            DeviceId:
+            - 7322
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD10000000 -FCFE0 -FN1 -FF0LPC18xx43xx_512_BA -FS01A000000 -FL080000 -FP0($$Device:LPC4322$Flash\LPC18xx43xx_512_BA.FLM))
+            SFDFile:
+            - $$Device:LPC4322$SVD\LPC43xx.svd
+            Vendor:
+            - NXP
+            RegisterFile:
+            - $$Device:LPC4322$Device\Include\LPC43xx.h
+            PackID:
+                - Keil.LPC4300_DFP.2.6.0
