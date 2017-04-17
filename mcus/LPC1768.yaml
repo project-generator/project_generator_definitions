@@ -1,0 +1,6 @@
+mcu:
+    name: lpc1768
+    vendor: NXP
+    core: ARM Cortex M3
+    macros:
+        - TARGET_LPC1768

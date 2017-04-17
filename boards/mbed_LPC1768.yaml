@@ -1,0 +1,6 @@
+board:
+	mcu: lpc1768
+	macros:
+		- __MBED__=1
+
+# other board-specific settings here
