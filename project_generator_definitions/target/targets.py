@@ -178,6 +178,9 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'lpcxpresso-lpc54608': {
+        'mcu':'mcu/nxp/lpc54608_et180',
+    },
     'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
     },
