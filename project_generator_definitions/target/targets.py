@@ -178,6 +178,9 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'lpcxpresso-lpc54114': {
+        'mcu':'mcu/nxp/lpc54114_bd64',
+    },
     'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
     },
