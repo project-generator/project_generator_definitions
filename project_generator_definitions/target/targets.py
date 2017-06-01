@@ -82,6 +82,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'disco-l475vg-iot01a': {
+        'mcu':'mcu/st/stm32l475vg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'disco-l476vg': {
         'mcu':'mcu/st/stm32l476vg',
         'debugger': {
