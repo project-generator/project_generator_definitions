@@ -9,7 +9,7 @@ tool_specific:
     iar:
         OGChipSelectEditMenu:
           state:
-          - STM32L072CZ	ST STM32L072CZ
+          - STM32L072CZ ST STM32L072CZ
         OGCoreOrChip:
           state:
           - 1
