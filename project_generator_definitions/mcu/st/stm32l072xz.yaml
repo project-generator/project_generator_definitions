@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l072xz
+    core:
+        - cortex-m0plus
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L072CZ ST STM32L072CZ
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x802FFFF) CLOCK(12000000) CPUTYPE("Cortex-M0+")
+            Device:
+            - STM32L072CZ
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - ULP2CM3(-O207 -S8 -C0 -FO7 -FD20000000 -F5000 -FN1 -FF0STM32L0xx_192 -FS08000000 -FL030000)
+            SFDFile:
+            - null
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x00030000) IRAM(0x20000000,0x00005000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE
+            Device:
+            - STM32L072CZYx
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L0xx_192 -FS08000000 -FL030000 -FP0($$Device:STM32L072CZYx$Flash\STM32L0xx_192.FLM))
+            PackID:
+            - Keil.STM32L0xx_DFP.1.6.0
+            SFDFile:
+            - $$Device:STM32L072CZYx$SVD\STM32L07x.svd
+            RegisterFile:
+            - $$Device:STM32L072CZYx$Device\Include\stm32l0xx.h
+            Vendor:
+            - STMicroelectronics
