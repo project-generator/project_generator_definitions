@@ -1,0 +1,22 @@
+mcu:
+    core:
+    - cortex-m3
+    name:
+    - tmpm366fdfg
+    vendor:
+    - toshiba
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x00000000,0x00080000) IRAM(0x20000000,0x00010000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - TMPM366FDFG
+            DeviceId:
+            - 5621
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0TMPM36x_512 -FS00 -FL080000 -FP0($$Device:TMPM366FDFG$Flash\TMPM36x_512.FLM))
+            SFDFile:
+            - $$Device:TMPM366FDFG$SVD\M366.svd
+            Vendor:
+            - Toshiba

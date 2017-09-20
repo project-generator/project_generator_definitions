@@ -75,6 +75,20 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'disco-l072cz-lrwan1': {
+        'mcu':'mcu/st/stm32l072xz',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
+    'disco-l475vg-iot01a': {
+        'mcu':'mcu/st/stm32l475vg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'disco-l476vg': {
         'mcu':'mcu/st/stm32l476vg',
         'debugger': {
@@ -180,6 +194,9 @@ PROGENDEF_TARGETS = {
     },
     'lpcxpresso-lpc54608': {
         'mcu':'mcu/nxp/lpc54608_et180',
+    },
+    'lpcxpresso-lpc54114': {
+        'mcu':'mcu/nxp/lpc54114_bd64',
     },
     'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
@@ -525,6 +542,13 @@ PROGENDEF_TARGETS = {
     },
     'ncs36510': {
         'mcu':'mcu/onsemi/ncs36510',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
+    'tmpm366fdfg':  {
+        'mcu': 'mcu/toshiba/tmpm366fdfg',
         'debugger': {
             'name': 'cmsis-dap',
             'interface': 'swd',

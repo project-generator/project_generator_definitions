@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l475vg
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32L475VG ST STM32L475VG
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IROM(0x08000000,0x100000) IRAM(0x20000000,0x18000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - STM32L476VG
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx -FS08000000 -FL0100000 -FP0($$Device:STM32L475VG$Flash\STM32L4xx.FLM))
+            SFDFile:
+            - $$Device:STM32L475VG$SVD\STM32L4x.svd
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00018000) IRAM2(0x10000000,0x00008000) IROM(0x08000000,0x00100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32L475VGTx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32L4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32L475VGTx$Flash\STM32L4xx_1024.FLM))
+            PackID:
+            - Keil.STM32L4xx_DFP.1.4.0
+            SFDFile:
+            - $$Device:STM32L475VGTx$SVD\STM32L4x5.svd
+            RegisterFile:
+            - $$Device:STM32L475VGTx$Device\Include\stm32l4xx.h
+            Vendor:
+            - STMicroelectronics
