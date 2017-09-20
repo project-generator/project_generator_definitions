@@ -543,5 +543,12 @@ PROGENDEF_TARGETS = {
             'name': 'cmsis-dap',
             'interface': 'swd',
         }
+    },
+    'tmpm366fdfg':  {
+        'mcu': 'mcu/toshiba/tmpm366fdfg',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
     }
 }
