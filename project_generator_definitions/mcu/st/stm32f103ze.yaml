@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f103ze
+    core:
+        - cortex-m3
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F103ZE ST STM32F103ZE
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x2000FFFF) IROM(0x8000000-0x807FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")
+            Device:
+            - STM32F103ZE
+            DeviceId:
+            - 4216
+            FlashDriverDll:
+            - UL2CM3(-O14 -S0 -C0 -N00("ARM Cortex-M3") -D00(1BA00477) -L00(4) -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000)
+            SFDFile:
+            - SFD\ST\STM32F1xx\STM32F103xx.sfr
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x10000) IROM(0x08000000,0x80000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - STM32F103ZE
+            DeviceId:
+            - 4216
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000 -FP0($$Device:STM32F103ZE$Flash\STM32F10x_512.FLM))
+            PackID:
+            - Keil.STM32F1xx_DFP.2.2.0
+            SFDFile:
+            - $$Device:STM32F103ZE$SVD\STM32F103xx.svd
+            RegisterFile:
+            - $$Device:STM32F103ZE$Device\Include\stm32f10x.h
+            Vendor:
+            - STMicroelectronics
