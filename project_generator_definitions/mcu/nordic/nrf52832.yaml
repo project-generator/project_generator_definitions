@@ -1,0 +1,45 @@
+mcu:
+    vendor:
+        - nordic
+    name:
+        - nrf52
+    core:
+        - cortex-m4
+tool_specific:
+    uvision:
+        TargetOption:
+            Device:
+                - nRF52832_xxAA
+            Vendor:
+                - Nordic Semiconductor
+            Cpu:
+                - IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE
+            FlashDriverDll:
+                - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC2000 -FN1 -FF0nrf52xxx -FS00 -FL0200000 -FP0($$Device:nRF52832_xxAA$Flash\nrf52xxx))
+            DeviceId:
+                - 0
+            SFDFile:
+                - $$Device:nRF52832_xxAA$SVD\nrf52.xml
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - nRF52832-QFAA NordicSemi nRF52832-QFAA
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IROM(0x00000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(64000000) ELITTLE
+            Device:
+            - nRF52832_xxAA
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC2000 -FN1 -FF0nrf52xxx -FS00 -FL0200000 -FP0($$Device:nRF52832_xxAA$Flash\nrf52xxx))
+            PackID:
+            - NordicSemiconductor.nRF_DeviceFamilyPack.8.16.0
+            SFDFile:
+            - $$Device:nRF52832_xxAA$SVD\nrf52.svd
+            Vendor:
+            - Nordic Semiconductor
