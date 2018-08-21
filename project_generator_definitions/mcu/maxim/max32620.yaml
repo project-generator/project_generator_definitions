@@ -1,0 +1,29 @@
+mcu:
+    vendor:
+        - maxim
+    name:
+        - max32620
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - MAX32620 Maxim MAX32620
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000, 0x40000) IROM(0, 0x200000) CLOCK(96000000) CPUTYPE("Cortex-M4.fp.sp")
+            Device:
+            - MAX32620
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            SFDFile:
+            - null
+            Vendor:
+            - Maxim Integrated

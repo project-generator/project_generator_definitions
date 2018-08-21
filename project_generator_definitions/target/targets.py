@@ -75,6 +75,20 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'disco-l072cz-lrwan1': {
+        'mcu':'mcu/st/stm32l072xz',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
+    'disco-l475vg-iot01a': {
+        'mcu':'mcu/st/stm32l475vg',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'disco-l476vg': {
         'mcu':'mcu/st/stm32l476vg',
         'debugger': {
@@ -178,11 +192,26 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'lpcxpresso-lpc54608': {
+        'mcu':'mcu/nxp/lpc54608_et180',
+    },
+    'lpcxpresso-lpc54114': {
+        'mcu':'mcu/nxp/lpc54114_bd64',
+    },
     'maxwsnenv': {
         'mcu':'mcu/maxim/max32600x85',
     },
     'max32600mbed': {
         'mcu':'mcu/maxim/max32600x85',
+    },
+    'max32620hsp': {
+        'mcu':'mcu/maxim/max32620',
+    },
+    'max32620mbed': {
+        'mcu':'mcu/maxim/max32620',
+    },
+    'max32625mbed': {
+        'mcu':'mcu/maxim/max32625',
     },
     'mbed-lpc11u24': {
         'mcu':'mcu/nxp/lpc11u24_201',
@@ -193,6 +222,13 @@ PROGENDEF_TARGETS = {
     'mkit': {
         'mcu':'mcu/nordic/nrf51822',
     },
+    'mtm-mtconnect04s': {
+        'mcu':'mcu/nordic/nrf51822',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+     },
     'nrf51-dk': {
         'mcu':'mcu/nordic/nrf51822',
         'debugger': {
@@ -311,6 +347,13 @@ PROGENDEF_TARGETS = {
             'interface': 'swd',
         }
     },
+    'stm32f103ze': {
+        'mcu':'mcu/st/stm32f103ze',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
     'nucleo-f091rc': {
         'mcu':'mcu/st/stm32f091rc',
         'debugger': {
@@ -327,6 +370,13 @@ PROGENDEF_TARGETS = {
     },
     'nucleo-f303re': {
         'mcu':'mcu/st/stm32f303xe',
+        'debugger': {
+            'name': 'st-link',
+            'interface': 'swd',
+        }
+    },
+     'nucleo-f303ze': {
+        'mcu':'mcu/st/stm32f303ze',
         'debugger': {
             'name': 'st-link',
             'interface': 'swd',
@@ -492,6 +542,20 @@ PROGENDEF_TARGETS = {
     },
     'cocorico': {
         'mcu':'mcu/nxp/lpc812m101',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
+    'ncs36510': {
+        'mcu':'mcu/onsemi/ncs36510',
+        'debugger': {
+            'name': 'cmsis-dap',
+            'interface': 'swd',
+        }
+    },
+    'tmpm366fdfg':  {
+        'mcu': 'mcu/toshiba/tmpm366fdfg',
         'debugger': {
             'name': 'cmsis-dap',
             'interface': 'swd',

@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f303ze
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - STM32F303ZE ST STM32F303ZE
+        OGCoreOrChip:
+            state:
+            - 1   
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00010000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F303ZE
+            DeviceId:
+            - 6576
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F3xx_256 -FS08000000 -FL040000 -FP0($$Device:STM32F302RC$Flash\STM32F3xx_256.FLM))
+            SFDFile:
+            - $$Device:STM32F302RC$SVD\STM32F30x.svd
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00010000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F303RE
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F3xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F303ZE$Flash\STM32F3xx_512.FLM))
+            PackID:
+            - Keil.STM32F3xx_DFP.1.3.0
+            SFDFile:
+            - $$Device:STM32F303ZE$SVD\STM32F303xE.svd
+            RegisterFile:
+            - $$Device:STM32F303ZE$Device\Include\stm32f3xx.h
+            Vendor:
+            - STMicroelectronics

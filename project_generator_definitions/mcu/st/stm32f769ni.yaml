@@ -6,6 +6,22 @@ mcu:
     core:
         - cortex-m7f
 tool_specific:
+    iar:
+        CoreVariant:
+            state:
+            - 41
+        GFPUCoreSlave2:
+            state:
+            - 41
+        GBECoreSlave:
+            state:
+            - 41
+        OGChipSelectEditMenu:
+            state:
+            - STM32F769NI ST STM32F769NI
+        OGCoreOrChip:
+            state:
+            - 1
     uvision5:
         TargetOption:
             Cpu:
