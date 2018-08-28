@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32f072cb
+    core:
+        - cortex-m0
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F072CB ST STM32F072CB
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20003FFF) IROM(0x08000000-0x0801FFFF) CLOCK(8000000) CPUTYPE("Cortex-M0")
+            Device:
+            - STM32F072CB
+            DeviceId:
+            - 7471
+            FlashDriverDll:
+            - UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F0xx_128 -FS08000000 -FL020000)
+            SFDFile:
+            - SFD\ST\STM32F0xx\STM32F072x.SFR
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x4000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M0") CLOCK(8000000) ELITTLE
+            Device:
+            - STM32F072CBTx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F0xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32F070CB$Flash\STM32F0xx_128.FLM))
+            PackID:
+            - Keil.STM32F0xx_DFP.1.5.0
+            SFDFile:
+            - $$Device:STM32F072CB$SVD\STM32F0x0.svd
+            RegisterFile:
+            - $$Device:STM32F072CB$Device\Include\stm32f0xx.h
+            Vendor:
+            - STMicroelectronics
