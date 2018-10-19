@@ -216,6 +216,9 @@ PROGENDEF_TARGETS = {
     'mbed-lpc11u24': {
         'mcu':'mcu/nxp/lpc11u24_201',
     },
+    'mk20dx128xxx5': {
+        'mcu':'mcu/nxp/lpc11u35_501',
+    },	
     'bbc-microbit': {
         'mcu':'mcu/nordic/nrf51822',
     },
