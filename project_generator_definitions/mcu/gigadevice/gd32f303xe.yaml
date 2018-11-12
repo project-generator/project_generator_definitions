@@ -1,6 +1,6 @@
 mcu:
     vendor:
-        - gd
+        - GigaDevice
     name:
         - gd32f303xe
     core:
