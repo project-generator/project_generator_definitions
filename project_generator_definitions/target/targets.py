@@ -560,5 +560,12 @@ PROGENDEF_TARGETS = {
             'name': 'cmsis-dap',
             'interface': 'swd',
         }
+    },
+    'mbed-gd32f303ce': {
+        'mcu':'mcu/gigadevice/gd32f303xe',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     }
 }
