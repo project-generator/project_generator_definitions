@@ -16,7 +16,7 @@ tool_specific:
     uvision:
         TargetOption:
             Cpu:
-            - IRAM(0x20000000-0x2000FFFF) IROM(0x08000000-0x0807FFFF) CLOCK(8000000) CPUTYPE("Cortex-M4")
+            - IRAM(0x20000000-0x2000FFFF) IROM(0x08000000-0x0807FFFF) CLOCK(8000000) CPUTYPE("Cortex-M4") FPU2
             Device:
             - GD32F303CE
             DeviceId:
