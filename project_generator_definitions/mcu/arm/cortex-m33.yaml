@@ -6,7 +6,7 @@ mcu:
     core:
         - cortex-m33
 tool_specific:
-    uvision:
+    uvision5:
         TargetOption:
             Device:
                 - ARMCM33
