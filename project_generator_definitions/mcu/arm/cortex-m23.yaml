@@ -1,0 +1,24 @@
+mcu:
+    vendor:
+        - arm
+    name:
+        - cortex-m23
+    core:
+        - cortex-m23
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00020000) IRAM2(0x20200000,0x00020000) IROM(0x00000000,0x00200000) IROM2(0x00200000,0x00200000) CPUTYPE("Cortex-M23") CLOCK(12000000) ESEL ELITTLE
+            Device:
+            - ARMCM23
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2V8M(-S0 -C0 -P0 -FD20000000 -FC1000)
+            RegisterFile:
+            - $$Device:ARMCM23$Device\ARM\ARMCM23\Include\ARMCM23.h
+            SFDFile:
+            - null
+            Vendor:
+            - ARM
