@@ -1,0 +1,24 @@
+mcu:
+    core:
+    - cortex-m3
+    name:
+    - psoc5lp
+    vendor:
+    - Cypress
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x1FFFE000-0x1FFFFFFF) IRAM2(0x20000000-0x20001FFF) IROM(0x0-0xFFFF) CLOCK(4000000) CPUTYPE("Cortex-M3") ELITTLE ESEL
+            Device:
+            - CY8C5868LTI-LP039
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - null
+            RegisterFile:
+            - null
+            SFDFile:
+            - null
+            Vendor:
+            - Cypress

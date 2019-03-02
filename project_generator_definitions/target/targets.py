@@ -567,5 +567,8 @@ PROGENDEF_TARGETS = {
             'name': 'j-link',
             'interface': 'swd',
         }
+    },
+    'cy8c5868lti-lp039': {
+        'mcu':'mcu/cypress/psoc5lp',
     }
 }
