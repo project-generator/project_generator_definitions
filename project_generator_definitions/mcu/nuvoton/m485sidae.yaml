@@ -1,0 +1,36 @@
+mcu:
+    core:
+    - cortex-m4f
+    name:
+    - m485sidae
+    vendor:
+    - Nuvoton
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20027FFF) IROM(0-0x7FFFF) CLOCK(192000000) CPUTYPE("Cortex-M4") FPU2
+            Device:
+            - M485SIDAE
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - null
+            SFDFile:
+            - SFD\Nuvoton\M481_v1.SFR
+            Vendor:
+            - Nuvoton
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x20027FFF) IROM(0-0x7FFFF) CLOCK(192000000) CPUTYPE("Cortex-M4") FPU2
+            Device:
+            - M485SIDAE
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - null
+            SFDFile:
+            - SFD\Nuvoton\M481_v1.SFR
+            Vendor:
+            - Nuvoton
