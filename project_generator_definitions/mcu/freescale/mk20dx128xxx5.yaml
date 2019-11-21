@@ -20,6 +20,24 @@ tool_specific:
                 - 6206
             SFDFile:
                 - SFD\Freescale\Kinetis\MK20D5.sfr
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00002000) IRAM2(0x1FFFE000,0x00002000) IROM(0x00000000,0x00020000) IROM2(0x10000000,0x00008000) CPUTYPE("Cortex-M4") CLOCK(12000000) ELITTLE
+            Device:
+            - MK20DX128xxx5
+            DeviceId:
+            - 6206
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0MK_P128_50MHZ -FS00 -FL020000 -FF1MK_D32_50MHZ -FS110000000 -FL18000 -FP0($$Device:MK20DX128xxx5$Flash\MK_P128_50MHZ.FLM) -FP1($$Device:MK20DX128xxx5$Flash\MK_D32_50MHZ.FLM))
+            PackID:
+            - Keil.Kinetis_K20_DFP.1.7.0
+            RegisterFile:
+            - $$Device:MK20DX128xxx5$Device\Include\MK20D5.h
+            SFDFile:
+            - $$Device:MK20DX128xxx5$SVD\MK20D5.svd
+            Vendor:
+            - NXP
     iar:
         OGChipSelectEditMenu:
           state:
