@@ -31,7 +31,7 @@ class UvisionDefinition:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        uvproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
         # Generic Target, should get from Target class !
         mcu = MCU_TEMPLATE
 
@@ -64,7 +64,7 @@ class UvisionDefinition5:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        uvproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
         # Generic Target, should get from Target class !
         mcu = MCU_TEMPLATE
 
@@ -104,7 +104,7 @@ class IARDefinitions:
         # TODO: check the extension here if it's valid IAR project or we
         # should at least check if syntax is correct check something IAR defines and return error if not
         project_file = join(getcwd(), project_file)
-        ewp_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        ewp_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
 
         mcu = MCU_TEMPLATE
 
@@ -184,7 +184,7 @@ class CoIDEdefinitions:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        coproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        coproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
 
         mcu = MCU_TEMPLATE
 
