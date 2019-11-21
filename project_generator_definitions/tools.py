@@ -31,7 +31,7 @@ class UvisionDefinition:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        uvproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
         # Generic Target, should get from Target class !
         mcu = MCU_TEMPLATE
 
@@ -64,7 +64,7 @@ class UvisionDefinition5:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        uvproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        uvproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
         # Generic Target, should get from Target class !
         mcu = MCU_TEMPLATE
 
@@ -104,7 +104,7 @@ class IARDefinitions:
         # TODO: check the extension here if it's valid IAR project or we
         # should at least check if syntax is correct check something IAR defines and return error if not
         project_file = join(getcwd(), project_file)
-        ewp_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        ewp_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
 
         mcu = MCU_TEMPLATE
 
@@ -160,7 +160,11 @@ class IARDefinitions:
             mcu['tool_specific']['iar']['GFPUCoreSlave2'] = { 'state': [int(GFPUCoreSlave2['state'])] }
             index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'CoreVariant')
             CoreVariant = configuration['settings'][index_general]['data']['option'][index_option]
-            mcu['tool_specific']['iar']['CoreVariant'] = { 'state': [int(CoreVariant['state'])] }
+            # not all projects have CoreVariant filled in
+            try:
+                mcu['tool_specific']['iar']['CoreVariant'] = { 'state': [int(CoreVariant['state'])] }
+            except TypeError:
+                pass
         else:
             index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'GFPUCoreSlave')
             GFPUCoreSlave = configuration['settings'][index_general]['data']['option'][index_option]
@@ -184,7 +188,7 @@ class CoIDEdefinitions:
     def get_mcu_definition(self, project_file):
         """ Parse project file to get mcu definition """
         project_file = join(getcwd(), project_file)
-        coproj_dic = xmltodict.parse(file(project_file), dict_constructor=dict)
+        coproj_dic = xmltodict.parse(open(project_file, "rb"), dict_constructor=dict)
 
         mcu = MCU_TEMPLATE
 
