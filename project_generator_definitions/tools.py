@@ -160,7 +160,11 @@ class IARDefinitions:
             mcu['tool_specific']['iar']['GFPUCoreSlave2'] = { 'state': [int(GFPUCoreSlave2['state'])] }
             index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'CoreVariant')
             CoreVariant = configuration['settings'][index_general]['data']['option'][index_option]
-            mcu['tool_specific']['iar']['CoreVariant'] = { 'state': [int(CoreVariant['state'])] }
+            # not all projects have CoreVariant filled in
+            try:
+                mcu['tool_specific']['iar']['CoreVariant'] = { 'state': [int(CoreVariant['state'])] }
+            except TypeError:
+                pass
         else:
             index_option = self._get_option(configuration['settings'][index_general]['data']['option'], 'GFPUCoreSlave')
             GFPUCoreSlave = configuration['settings'][index_general]['data']['option'][index_option]
