@@ -1,0 +1,42 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - pic32cxmtg
+    vendor:
+    - Microchip
+tool_specific:
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x7FFFF) IROM(0x01000000,0x200000) CPUTYPE("Cortex-M4") CLOCK(12000000) ELITTLE
+            Device:
+            - PIC32CX2051MTG100
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0PIC32CX_2048 -FS01000000 -FL0200000 -FP0($$Device:PIC32CX2051MTG100$Flash/PIC32CX_2048.FLM))
+            PackID:
+            - Microchip.PIC32CX.1.0.0
+            RegisterFile:
+            - $$Device:PIC32CX2051MTG100$Device/Include/PIC32CX/pic32cx.h
+            SFDFile:
+            - $$Device:PIC32CX2051MTG100$SVD/PIC32CX/PIC32CX2051MTG100.svd
+            Vendor:
+            - Microchip
+    iar:
+        CoreVariant:
+            state:
+            - 39
+        GBECoreSlave:
+            state:
+            - 39
+        GFPUCoreSlave2:
+            state:
+            - 39
+        OGChipSelectEditMenu:
+            state:
+            - PIC32CX2051MTG100 Microchip PIC32CX2051MTG100
+        OGCoreOrChip:
+            state:
+            - 1

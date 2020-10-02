@@ -570,5 +570,12 @@ PROGENDEF_TARGETS = {
     },
     'cy8c5868lti-lp039': {
         'mcu':'mcu/cypress/psoc5lp',
+    },
+    'pic32cxmtg': {
+        'mcu':'mcu/microchip/pic32cxmtg',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     }
 }
