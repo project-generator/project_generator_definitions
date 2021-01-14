@@ -577,5 +577,12 @@ PROGENDEF_TARGETS = {
             'name': 'j-link',
             'interface': 'swd',
         }
+    },
+    'lpc55s69': {
+        'mcu':'mcu/nxp/lpc55s69',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     }
 }
