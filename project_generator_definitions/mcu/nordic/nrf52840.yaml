@@ -1,0 +1,49 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - nRF52840_xxAA
+    vendor:
+    - nordic
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x40000) IROM(0x00000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - nRF52840_xxAA
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC4000 -FN2 -FF0nrf52xxx -FS00 -FL0200000 -FF1nrf52xxx_uicr -FS110001000 -FL11000 -FP0($$Device:nRF52840_xxAA$Flash\nrf52xxx.flm) -FP1($$Device:nRF52840_xxAA$Flash\nrf52xxx_uicr.flm))
+            RegisterFile:
+            - $$Device:nRF52840_xxAA$Device\Include\nrf.h
+            SFDFile:
+            - $$Device:nRF52840_xxAA$SVD\nrf52840.svd
+            Vendor:
+            - Nordic Semiconductor
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x40000) IROM(0x00000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - nRF52840_xxAA
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC4000 -FN2 -FF0nrf52xxx -FS00 -FL0200000 -FF1nrf52xxx_uicr -FS110001000 -FL11000 -FP0($$Device:nRF52840_xxAA$Flash\nrf52xxx.flm) -FP1($$Device:nRF52840_xxAA$Flash\nrf52xxx_uicr.flm))
+            PackID:
+            - NordicSemiconductor.nRF_DeviceFamilyPack.8.38.0
+            RegisterFile:
+            - $$Device:nRF52840_xxAA$Device\Include\nrf.h
+            SFDFile:
+            - $$Device:nRF52840_xxAA$SVD\nrf52840.svd
+            Vendor:
+            - Nordic Semiconductor
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - nRF52840-xxAA NordicSemi nRF52840-xxAA
+        OGCoreOrChip:
+          state:
+          - 1
