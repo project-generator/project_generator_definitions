@@ -25,7 +25,7 @@ from .target.targets import PROGENDEF_TARGETS
 
 def _load_record(file):
     project_file = open(file)
-    config = yaml.load(project_file)
+    config = yaml.load(project_file, Loader=yaml.FullLoader)
     project_file.close()
     return config
 

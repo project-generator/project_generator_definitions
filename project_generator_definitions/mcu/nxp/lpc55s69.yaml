@@ -1,0 +1,7 @@
+mcu:
+    vendor:
+        - nxp
+    name:
+        - lpc55s69
+    core:
+        - cortex-m33

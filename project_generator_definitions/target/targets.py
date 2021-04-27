@@ -560,5 +560,29 @@ PROGENDEF_TARGETS = {
             'name': 'cmsis-dap',
             'interface': 'swd',
         }
+    },
+    'mbed-gd32f303ce': {
+        'mcu':'mcu/gigadevice/gd32f303xe',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
+    },
+    'cy8c5868lti-lp039': {
+        'mcu':'mcu/cypress/psoc5lp',
+    },
+    'pic32cxmtg': {
+        'mcu':'mcu/microchip/pic32cxmtg',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
+    },
+    'lpc55s69': {
+        'mcu':'mcu/nxp/lpc55s69',
+        'debugger': {
+            'name': 'j-link',
+            'interface': 'swd',
+        }
     }
 }

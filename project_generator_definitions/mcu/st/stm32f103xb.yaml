@@ -4,7 +4,7 @@ mcu:
     name:
         - stm32f103xb
     core:
-        - cortex-m4
+        - cortex-m3
 tool_specific:
     iar:
         OGChipSelectEditMenu:

@@ -1,0 +1,47 @@
+mcu:
+    vendor:
+        - GigaDevice
+    name:
+        - gd32f303xe
+    core:
+        - cortex-m4
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - GD32F303xE GD GD32F303xE
+        OGCoreOrChip:
+          state:
+          - 1
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x2000FFFF) IROM(0x08000000-0x0807FFFF) CLOCK(8000000) CPUTYPE("Cortex-M4") FPU2
+            Device:
+            - GD32F303CE
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-O207 -S0 -C0 -P0 -FO7 -FD20000000 -FC800 -FN1 -FF0GD32F30x_HD -FS08000000 -FL080000)
+            SFDFile:
+            - SFD\GD\GD32F30x\GD32F30x_HD.SFR
+            Vendor:
+            - GigaDevice
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00010000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE
+            Device:
+            - GD32F303CE
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0GD32F30x_HD -FS08000000 -FL010000 -FP0($$Device:GD32F303CE$Flash\GD32F30x_HD.FLM))
+            PackID:
+            - GigaDevice.GD32F30x_DFP.1.0.2
+            SFDFile:
+            - $$Device:GD32F303CE$SVD\GD32F30x_HD.svd
+            RegisterFile:
+            - $$Device:GD32F303CE$Device\Include\gd32f30x.h
+            Vendor:
+            - GigaDevice

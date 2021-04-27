@@ -19,8 +19,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='project_generator_definitions',
-    version='0.2.35',
-    author_email='c0170@rocketmail.com',
+    version='0.2.42',
+    author_email='0xc0170@gmail.com',
     keywords="definitions mcu uvision iar coide",
     url="https://github.com/project-generator/project_generator_definitions",
     classifiers= [
