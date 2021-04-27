@@ -1,0 +1,49 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - AMA3B1KK-KBR
+    vendor:
+    - Ambiq Micro
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x10000000,0x00060000) IROM(0x0000C000,0x000F4000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - AMA3B1KK-KBR
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD10000000 -FC4000 -FN1 -FF0Apollo3 -FS0C000 -FL0F4000 -FP0($$Device:AMA3B1KK-KBR$Flash\Apollo3.FLM))
+            RegisterFile:
+            - $$Device:AMA3B1KK-KBR$Device\Include\apollo3.h
+            SFDFile:
+            - $$Device:AMA3B1KK-KBR$SVD\apollo3.svd
+            Vendor:
+            - Ambiq Micro
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x10000000,0x00060000) IROM(0x0000C000,0x000F4000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - AMA3B1KK-KBR
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD10000000 -FC4000 -FN1 -FF0Apollo3 -FS0C000 -FL0F4000 -FP0($$Device:AMA3B1KK-KBR$Flash\Apollo3.FLM))
+            PackID:
+            - AmbiqMicro.Apollo_DFP.1.1.0
+            RegisterFile:
+            - $$Device:AMA3B1KK-KBR$Device\Include\apollo3.h
+            SFDFile:
+            - $$Device:AMA3B1KK-KBR$SVD\apollo3.svd
+            Vendor:
+            - Ambiq Micro
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - AMA3B1KK-KBR	AmbiqMicro AMA3B1KK-KBR
+        OGCoreOrChip:
+          state:
+          - 1
