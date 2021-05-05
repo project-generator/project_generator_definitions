@@ -1,0 +1,50 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - STM32F401CCUx
+    vendor:
+    - st
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x2000FFFF) IROM(0x8000000-0x803FFFF)  CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4")
+            Device:
+            - STM32F401CCUx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            RegisterFile:
+            - null
+            SFDFile:
+            - $$Device:STM32F401CCUx$CMSIS\SVD\STM32F401x.svd
+            Vendor:
+            - STMicroelectronics
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000-0x2000FFFF) IROM(0x8000000-0x803FFFF)  CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4")
+            Device:
+            - STM32F401CCUx
+            DeviceId:
+            - null
+            FlashDriverDll:
+            - null
+            PackID:
+            - Keil.STM32F4xx_DFP.2.11.0
+            RegisterFile:
+            - null
+            SFDFile:
+            - $$Device:STM32F401CCUx$CMSIS\SVD\STM32F401x.svd
+            Vendor:
+            - STMicroelectronics
+    iar:
+        OGChipSelectEditMenu:
+          state:
+          - STM32F401CCUx ST STM32F401CCUx
+        OGCoreOrChip:
+          state:
+          - 1
+            
