@@ -1,0 +1,50 @@
+mcu:
+    core:
+    - cortex-m4
+    name:
+    - mk22fn128xxx10
+    vendor:
+    - freescale
+tool_specific:
+    uvision:
+        TargetOption:
+            Cpu:
+            - IRAM(0x1fffe000,0x2000) IRAM2(0x20000000,0x4000) IROM(0x00000000,0x020000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - MK22FN128VLH10
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MK_P128 -FS00 -FL020000 -FP0($$Device:MK22FN128VLH10$arm\MK_P128.FLM))
+            RegisterFile:
+            - $$Device:MK22FN128VLH10$fsl_device_registers.h
+            SFDFile:
+            - $$Device:MK22FN128VLH10$MK22F12810.xml
+            Vendor:
+            - NXP
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x1fffe000,0x2000) IRAM2(0x20000000,0x4000) IROM(0x00000000,0x020000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE
+            Device:
+            - MK22FN128VLH10
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MK_P128 -FS00 -FL020000 -FP0($$Device:MK22FN128VLH10$arm\MK_P128.FLM))
+            PackID:
+            - NXP.MK22F12810_DFP.10.0.3
+            RegisterFile:
+            - $$Device:MK22FN128VLH10$fsl_device_registers.h
+            SFDFile:
+            - $$Device:MK22FN128VLH10$MK22F12810.xml
+            Vendor:
+            - NXP
+    iar:
+        OGChipSelectEditMenu:
+            state:
+                - MK22FN128XXX10 Freescale MK22FN128XXX10
+        OGCoreOrChip:
+            state:
+                - 1
+                
