@@ -43,7 +43,7 @@ tool_specific:
     iar:
         OGChipSelectEditMenu:
           state:
-          - AMA3B1KK-KBR	AmbiqMicro AMA3B1KK-KBR
+          - AMA3B1KK-KBR AmbiqMicro AMA3B1KK-KBR
         OGCoreOrChip:
           state:
           - 1
