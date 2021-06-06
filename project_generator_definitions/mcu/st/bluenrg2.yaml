@@ -1,0 +1,7 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - bluenrg2
+    core:
+        - cortex-m0
