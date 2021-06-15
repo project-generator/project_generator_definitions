@@ -1,0 +1,8 @@
+mcu:
+    vendor:
+        - st
+    name:
+        - stm32l462ve
+    core:
+        - cortex-m4
+        
