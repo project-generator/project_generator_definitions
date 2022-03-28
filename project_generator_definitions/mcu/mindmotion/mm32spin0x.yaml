@@ -1,0 +1,33 @@
+mcu:
+    core:
+    - cortex-m0
+    name:
+    - mm32spin0x
+    vendor:
+    - MindMotion
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32SPIN05PF MindMotion MM32SPIN05PF
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x1000) IROM(0x08000000,0x8000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32SPIN05PF
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32SPIN05_32 -FS08000000 -FL08000 -FP0($$Device:MM32SPIN05PF$Flash\MM32SPIN05_32.FLM))
+            PackID:
+            - MindMotion.MM32SPIN0x_DFP.1.0.8
+            RegisterFile:
+            - $$Device:MM32SPIN05PF$Device\MM32SPIN06xx_s\Include\mm32_device.h
+            SFDFile:
+            - $$Device:MM32SPIN05PF$SVD\MM32SPIN05x_q.svd
+            Vendor:
+            - MindMotion

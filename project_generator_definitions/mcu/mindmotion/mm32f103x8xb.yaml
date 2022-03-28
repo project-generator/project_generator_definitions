@@ -1,0 +1,33 @@
+mcu:
+    core:
+    - cortex-m3
+    name:
+    - mm32f103x8xb
+    vendor:
+    - MindMotion
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32F103RBT MindMotion MM32F103RBT
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x5000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32F103RBT
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F103x_128 -FS08000000 -FL020000 -FP0($$Device:MM32F103RBT$Flash\MM32F103x_128.FLM))
+            PackID:
+            - MindMotion.MM32F103x8xB_DFP.1.4.8
+            RegisterFile:
+            - $$Device:MM32F103RBT$Device\MM32F103x8xB\Include\HAL_device.h
+            SFDFile:
+            - $$Device:MM32F103RBT$SVD\MM32F103x8xB.svd
+            Vendor:
+            - MindMotion
