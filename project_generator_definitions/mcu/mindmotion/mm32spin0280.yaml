@@ -1,0 +1,33 @@
+mcu:
+    core:
+    - cortex-m0
+    name:
+    - mm32spin0280
+    vendor:
+    - MindMotion
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32SPIN0280DAP MindMotion MM32SPIN0280DAP
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x2000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32SPIN0280DAP
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32SPIN0280_128 -FS08000000 -FL020000 -FP0($$Device:MM32SPIN0280DAP$Flash\MM32SPIN0280_128.FLM))
+            PackID:
+            - MindMotion.MM32SPIN0280_DFP.0.0.1
+            RegisterFile:
+            - $$Device:MM32SPIN0280DAP$Device\MM32SPIN0280\Include\mm32_device.h
+            SFDFile:
+            - $$Device:MM32SPIN0280DAP$SVD\MM32SPIN0280.svd
+            Vendor:
+            - MindMotion

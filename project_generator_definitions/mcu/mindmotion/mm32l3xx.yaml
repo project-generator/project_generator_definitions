@@ -1,0 +1,33 @@
+mcu:
+    core:
+    - cortex-m3
+    name:
+    - mm32l3xx
+    vendor:
+    - MindMotion
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32L373PT MindMotion MM32L373PT
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x5000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32L373PT
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32L3xx_128 -FS08000000 -FL020000 -FP0($$Device:MM32L373PT$Flash\MM32L3xx_128.FLM))
+            PackID:
+            - MindMotion.MM32L3xx_DFP.1.0.8
+            RegisterFile:
+            - $$Device:MM32L373PT$Device\MM32L3xx\Include\HAL_device.h
+            SFDFile:
+            - $$Device:MM32L373PT$SVD\MM32L3xx.svd
+            Vendor:
+            - MindMotion

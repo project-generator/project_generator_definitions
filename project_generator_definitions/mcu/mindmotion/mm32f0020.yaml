@@ -1,0 +1,34 @@
+mcu:
+    core:
+    - cortex-m0
+    name:
+    - mm32f0020
+    vendor:
+    - MindMotion
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32F0020B1T MindMotion MM32F0020B1T
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x00000800) IROM(0x08000000,0x00008000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32F0020B1T
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC800 -FN1 -FF0MM32F0020_32 -FS08000000 -FL08000 -FP0($$Device:MM32F0020B1T$Flash\MM32F0020_32.FLM))
+            PackID:
+            - MindMotion.MM32F0020_DFP.0.0.1
+            RegisterFile:
+            - null
+            SFDFile:
+            - $$Device:MM32F0020B1T$SVD\MM32F0020.svd
+            Vendor:
+            - MindMotion
+

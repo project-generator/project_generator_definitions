@@ -1,0 +1,33 @@
+mcu:
+    vendor:
+        - MindMotion
+    name:
+        - mm32f3270
+    core:
+        - cortex-m3
+tool_specific:
+    iar:
+        OGChipSelectEditMenu:
+            state:
+            - MM32F3277G9P MindMotion MM32F3277G9P
+        OGCoreOrChip:
+            state:
+            - 1
+    uvision5:
+        TargetOption:
+            Cpu:
+            - IRAM(0x20000000,0x20000) IROM(0x08000000,0x80000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
+            Device:
+            - MM32F3277G9P
+            DeviceId:
+            - 0
+            FlashDriverDll:
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F327x_512 -FS08000000 -FL080000 -FP0($$Device:MM32F3277G9P$Flash\MM32F327x_512.FLM))
+            PackID:
+            - MindMotion.MM32F3270_DFP.1.0.5
+            RegisterFile:
+            - null
+            SFDFile:
+            - $$Device:MM32F3277G9P$SVD\MM32F327x.svd
+            Vendor:
+            - MindMotion
