@@ -22,12 +22,12 @@ tool_specific:
             DeviceId:
             - 0
             FlashDriverDll:
-            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F327x_512 -FS08000000 -FL080000 -FP0($$Device:MM32F3277G9P$Flash\MM32F327x_512.FLM))
+            - UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F327x_512 -FS08000000 -FL080000 -FP0($$Device:MM32F3277G9P$Flash\MM32F3270_512.FLM))
             PackID:
             - MindMotion.MM32F3270_DFP.1.0.5
             RegisterFile:
             - null
             SFDFile:
-            - $$Device:MM32F3277G9P$SVD\MM32F327x.svd
+            - $$Device:MM32F3277G9P$SVD\MM32F3270.svd
             Vendor:
             - MindMotion
