@@ -9,7 +9,7 @@ tool_specific:
     iar:
         OGChipSelectEditMenu:
             state:
-            - MM32F3277G9P MindMotion MM32F3277G9P
+            - MM32F3273G9P MindMotion MM32F3273G9P
         OGCoreOrChip:
             state:
             - 1
@@ -18,7 +18,7 @@ tool_specific:
             Cpu:
             - IRAM(0x20000000,0x20000) IROM(0x08000000,0x80000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE
             Device:
-            - MM32F3277G9P
+            - MM32F3273G9P
             DeviceId:
             - 0
             FlashDriverDll:
@@ -28,6 +28,6 @@ tool_specific:
             RegisterFile:
             - null
             SFDFile:
-            - $$Device:MM32F3277G9P$SVD\MM32F3270.svd
+            - $$Device:MM32F3273G9P$SVD\MM32F3270.svd
             Vendor:
             - MindMotion
